@@ -7,21 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-
     <style>
         /* Theme Variables */
         :root {
-            --brand-1: #12F7D6;  /*Highlight*/
-            --brand-2: #98FAEC;  /*Hover*/
+            --brand-1: #12F7D6;
+            --brand-2: #98FAEC;
             --bg-1: #292F36;
-            --bg-2: #1A1E23;  /*Small areas*/
+            --bg-2: #1A1E23;
             --grey: #43454D;
             --soft-white: #F2FDFF;
-            --white: #F2FDFF;
-
-
-
         }
+
         body {
             background-color: var(--bg-1);
             font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
@@ -42,44 +38,18 @@
             margin-left: 20px;
         }
 
-        .custom-navbar .btn-outline-custom {
-            border-color: var(--brand-1);
-            color: var(--brand-1);
-            background-color: transparent;
-            opacity: 1; /* تأكيد بدون شفافية */
-        }
-
-        .btn-outline-custom {
-            color: var(--brand-1);
-            background-color: transparent;
-            border: 1px solid var(--brand-1);
-            padding: 1.25rem 1.75rem;
-            line-height: 1;
-            text-decoration: none;
-        }
-
-        .btn-brand {
-            border-radius: 32px;
-            background: var(--brand-1);
-        }
-        .btn-brand:hover {
-            background: var(--brand-2);
-            color: var(--grey);
-
-        }
-        .btn-outline{
+        .btn-outline {
             border-radius: 32px;
             background: var(--bg-1);
             border: 2px solid var(--brand-1);
-            color:var(--brand-1);
+            color: var(--brand-1);
+            padding: 0.75rem 1.5rem;
         }
-        .btn-outline:hover{
+
+        .btn-outline:hover {
             background: var(--brand-1);
             color: var(--grey);
-
         }
-
-
 
         /* Sidebar Icons */
         .sidebar-icons {
@@ -130,12 +100,14 @@
             margin-top: 20px;
         }
 
-        /* Main Section */
-        .main-section {
+        /* Sections */
+        section {
             height: 100vh;
-            padding-top: 100px;
+            display: flex;
+            align-items: center;
         }
 
+        /* Main Section */
         .intro-text {
             color: var(--brand-1);
             font-size: 16px;
@@ -157,27 +129,38 @@
             max-width: 600px;
             font-size: 16px;
             margin-top: 20px;
+            padding-bottom: 20px;
             color: var(--soft-white);
         }
 
+        /* Cards Section */
+        .credentials-card {
+            padding: 2rem;
+            background: var(--bg-2);
+            border-radius: 16px;
+            border: 1px solid var(--grey);
+            height: 100%;
+        }
+
+        .credentials-card img {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
     </style>
-
-
 </head>
+
 <body>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
     <div class="container">
-<!--        <a class="navbar-brand" href="#"><div class="logo">S</div></a>-->
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#">01. About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">02. Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">03. Work</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">04. Contact</a></li>
-                <li class="nav-item">
-                    <a class="btn btn-outline ms-3" href="#">Resume</a>
-                </li>
+                <li class="nav-item"><a class="btn btn-outline ms-3" href="#">Resume</a></li>
             </ul>
         </div>
     </div>
@@ -190,47 +173,113 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
 </div>
 
-<!-- Email on the right -->
+<!-- Email -->
 <div class="email-right">
     <span class="email-text">nojood-alamri@outlook.com</span>
     <div class="email-line"></div>
 </div>
 
-
-
 <!-- Main Section -->
-<section class="main-section d-flex align-items-center">
-    <div class="container p-5">
+<section class="main-section">
+    <div class="container p-5 text-start">
         <p class="intro-text">Hi, my name is</p>
-        <h1 class="name-text">Nojood.</h1>
-        <h2 class="build-text">I build things for the android.</h2>
+        <h1 class="name-text">Nojood</h1>
+        <h2 class="build-text">I craft experiences for the web and beyond.</h2>
         <p class="description-text">
-            I'm a software engineer based in Jeddah, IN specializing in building (and occasionally designing) exceptional android applications, and everything in between.
+            I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
-        <a href="#" class="btn btn-outline  mt-4">Get In Touch</a>
+        <a href="#" class="btn btn-outline mt-4">Get In Touch</a>
+    </div>
+</section>
 
-
-        <div class="row">
-            <div class="col">
-                <img src="./images/uj-logo.svg" alt="">
-                Software engineering graduate
+<!-- Highlights Section -->
+<section id="highlights">
+    <div class="container text-center">
+        <h2 class="text-center mb-5" style="color: var(--brand-1); font-size: 36px; font-weight: bold;">Highlights</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="credentials-card">
+                    <img src="./images/uj-logo.svg" alt="UJ Logo">
+                    <h5 class="text-white mb-1">Software Engineering Graduate</h5>
+                    <p class="text-light small m-0">University of Jeddah</p>
+                </div>
             </div>
-            <div class="col">
-
+            <div class="col-md-4">
+                <div class="credentials-card">
+                    <img src="./images/sce-logo.svg" alt="SCE Logo">
+                    <h5 class="text-white mb-1">Accredited Software Engineer</h5>
+                    <p class="text-light small m-0">Saudi Council of Engineers</p>
+                </div>
             </div>
-            <div class="col">
-
+            <div class="col-md-4">
+                <div class="credentials-card">
+                    <img src="./images/ksau-logo.svg" alt="KSAU Logo">
+                    <h5 class="text-white mb-1">Full Stack Developer</h5>
+                    <p class="text-light small m-0">King Saud bin Abdulaziz University</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section style="height: 50vh">
 
-
-
-
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container text-center">
+        <h2 class="text-center mb-5" style="color: var(--brand-1); font-size: 36px; font-weight: bold;">Skills</h2>
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-html5 fa-3x mb-3" style="color: #E54C21;"></i>
+                    <h6 class="text-white mt-2">HTML5</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-css3-alt fa-3x mb-3" style="color: #1572B6;"></i>
+                    <h6 class="text-white mt-2">CSS3</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-js fa-3x mb-3" style="color: #F7DF1E;"></i>
+                    <h6 class="text-white mt-2">JavaScript</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-react fa-3x mb-3" style="color: #61DBFB;"></i>
+                    <h6 class="text-white mt-2">React & React Native</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-php fa-3x mb-3" style="color: #8892BF;"></i>
+                    <h6 class="text-white mt-2">PHP</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fas fa-database fa-3x mb-3" style="color: #4DB33D;"></i>
+                    <h6 class="text-white mt-2">SQL / Databases</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fab fa-laravel fa-3x mb-3" style="color: #F9322C;"></i>
+                    <h6 class="text-white mt-2">Laravel</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="credentials-card py-4">
+                    <i class="fas fa-code fa-3x mb-3" style="color: var(--brand-1);"></i>
+                    <h6 class="text-white mt-2">Full-Stack Development</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
