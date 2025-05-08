@@ -6,11 +6,211 @@
     <title>Eng. Nojood - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <style>
+        /* Theme Variables */
+        :root {
+            --primary:   #FFFFFF;  /* Bright Turquoise */
+            --secondary: #FFFFFF;  /* Soft Blue-Teal */
+            --accent:    #FFFFFF;  /* Bright Pink-Mauve */
+            --background:#1F242C;  /* Deep Navy Gray */
+            --surface:   #2A2F38;  /* Slightly lighter for cards */
+            --text:      #FFFFFF;  /* Pure white for high readability */
+
+        }
+
+
+        /*nav bar*/
+        .custom-rounded-navbar {
+            background: var(--surface);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 48px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #ccc;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.75rem 2rem;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            z-index: 1;
+        }
+
+        .nav-link.active {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+
+        /*general*/
+        body {
+            background-color: var(--background);
+            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
+            color: var(--soft-white);
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /*buttons*/
+        .btn-outline {
+            border-radius: 32px;
+            background: var(--background);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--grey);
+        }
+
+
+        /* Sidebar Icons */
+        .sidebar-icons {
+            position: fixed;
+            top: 60%;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-icons a {
+            color: var(--soft-white);
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .sidebar-icons::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100px;
+            background-color: var(--soft-white);
+            margin: 20px auto 0;
+        }
+
+
+        /* Email */
+        .email-right {
+            position: fixed;
+            top: 80%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .email-text {
+            color: var(--soft-white);
+            font-size: 12px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .email-line {
+            width: 1px;
+            height: 100px;
+            background-color: var(--soft-white);
+            margin-top: 20px;
+        }
+
+
+        /* Sections */
+        section {
+            display: flex;
+            align-items: center;
+        }
+        .full-screen-section{
+            height: 100vh;
+        }
+        .contents-section{
+            padding: 2em;
+        }
+
+        /* Text */
+        .intro-text {
+            color: var(--primary);
+            font-size: 22px;
+        }
+
+        .name-text {
+            font-size: 56px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .build-text {
+            font-size: 48px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .description-text {
+            max-width: 800px;
+            font-size: 20px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            color: white;
+        }
+
+
+
+        .credentials-card, .skill-card{
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid var(--grey);
+            height: 100%;
+        }
+        .skill-card p {
+            color: var(--text);
+        }
+        .credentials-card img {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        .logo-img{
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        .card-title{
+            margin: 16px 8px;
+            padding-bottom: 16px;
+        }
+        .card-icon {
+            font-size: 2.8rem;
+            color: var(--text);
+        }
+        .height-100{
+            height: 100vh
+        }
+
         .circle {
             padding: 13px 20px;
             border-radius: 50%;
-            background-color: var(--brand-2);
+            background-color: var(--accent);
             color: #fff;
             max-height: 50px;
             z-index: 2;
@@ -91,202 +291,62 @@
             left: 50%;
             top: calc(50% - 3px);
         }
-    </style>
+        .filter-tab {
+            background-color: var(--surface);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 24px;
+            color: var(--text);
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+        .filter-tab:hover {
+            background-color: var(--accent);
+            color: var(--background);
+        }
+        .filter-tab.active {
+            background-color: var(--primary);
+            color: var(--background);
+        }
 
-    <style>
-        /* Theme Variables */
-        :root {
-            --brand-1: #12F7D6;
-            --brand-2: #98FAEC;
-            --bg-1: #292F36;
-            --bg-2: #1A1E23;
-            --grey: #43454D;
-            --soft-white: #F2FDFF;
+        .tool-card {
+            background-color: var(--surface);
+            border-radius: 12px;
+            padding: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .tool-card img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+        .tool-label {
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        .carousel-nav-icon {
+            height: 48px;
+            width: 48px;
+        }
+        .carousel-item {
+            .col, .col-sm, .col-md {
+                margin: 8px;
+                height: 200px;
+                background-size: cover;
+                background-position: center center;
+            }
         }
 
 
-        /*nav bar*/
-        .custom-rounded-navbar {
-            background: var(--bg-2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50px;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 48px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-link {
-            position: relative;
-            color: #ccc;
-            font-size: 16px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.75rem 2rem;
-            border-radius: 100px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            z-index: 1;
-        }
-
-        .nav-link.active {
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
 
 
-        /*general*/
-        body {
-            background-color: var(--bg-1);
-            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
-            color: var(--soft-white);
-            margin: 0;
-            padding: 0;
-        }
-
-
-        /*buttons*/
-        .btn-outline {
-            border-radius: 32px;
-            background: var(--bg-1);
-            border: 2px solid var(--brand-1);
-            color: var(--brand-1);
-            padding: 0.75rem 1.5rem;
-        }
-
-        .btn-outline:hover {
-            background: var(--brand-1);
-            color: var(--grey);
-        }
-
-
-        /* Sidebar Icons */
-        .sidebar-icons {
-            position: fixed;
-            top: 60%;
-            left: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar-icons a {
-            color: var(--soft-white);
-            margin: 10px 0;
-            font-size: 20px;
-        }
-
-        .sidebar-icons::after {
-            content: "";
-            display: block;
-            width: 1px;
-            height: 100px;
-            background-color: var(--soft-white);
-            margin: 20px auto 0;
-        }
-
-
-        /* Email */
-        .email-right {
-            position: fixed;
-            top: 80%;
-            right: 20px;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .email-text {
-            color: var(--soft-white);
-            font-size: 12px;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-
-        .email-line {
-            width: 1px;
-            height: 100px;
-            background-color: var(--soft-white);
-            margin-top: 20px;
-        }
-
-
-        /* Sections */
-        section {
-            display: flex;
-            align-items: center;
-        }
-        .full-screen-section{
-            height: 100vh;
-        }
-        .contents-section{
-            padding: 2em;
-        }
-
-        /* Text */
-        .intro-text {
-            color: var(--brand-1);
-            font-size: 22px;
-        }
-
-        .name-text {
-            font-size: 56px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .build-text {
-            font-size: 48px;
-            color: var(--brand-2);
-            font-weight: bold;
-        }
-
-        .description-text {
-            max-width: 800px;
-            font-size: 20px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-            color: var(--soft-white);
-        }
-
-
-        /* Cards Section */
-        .credentials-card {
-            padding: 2rem;
-            background: var(--bg-2);
-            border-radius: 16px;
-            border: 1px solid var(--grey);
-            height: 100%;
-        }
-
-        .credentials-card img {
-            height: 60px;
-            margin-bottom: 1rem;
-        }
-        .logo-img{
-            height: 60px;
-            margin-bottom: 1rem;
-        }
-        .card-title{
-            margin: 16px 8px;
-            padding-bottom: 16px;
-        }
-        .skill-icon {
-            font-size: 2.8rem;
-        }
-        .height-100{
-            height: 100vh
-        }
 
     </style>
 </head>
@@ -315,17 +375,17 @@
 </nav>
 
 <!-- Sidebar Icons -->
-<div class="sidebar-icons">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-</div>
+<!--<div class="sidebar-icons">-->
+<!--    <a href="#"><i class="fab fa-github"></i></a>-->
+<!--    <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--    <a href="#"><i class="fab fa-linkedin"></i></a>-->
+<!--</div>-->
 
 <!-- Email -->
-<div class="email-right">
-    <span class="email-text">nojood-alamri@outlook.com</span>
-    <div class="email-line"></div>
-</div>
+<!--<div class="email-right">-->
+<!--    <span class="email-text">nojood-alamri@outlook.com</span>-->
+<!--    <div class="email-line"></div>-->
+<!--</div>-->
 
 <!-- Main Section -->
 <section class="full-screen-section">
@@ -342,7 +402,7 @@
 
 <section id="highlights" class="p-5">
     <div class="container text-center">
-        <h2 class="text-center mb-5" style="color: var(--brand-1); font-size: 36px; font-weight: bold;">Highlights</h2>
+        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Highlights</h2>
         <div class="row text-center g-4">
 
 
@@ -378,15 +438,16 @@
 <section class="py-5" id="skills">
     <div class="container">
         <!-- Skills Section -->
-        <h2 class="text-center mb-5" style="color: var(--brand-1); font-size: 36px; font-weight: bold;">Skills</h2>
+        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Skills</h2>
         <div class="row row-cols-1 row-cols-md-2 g-4 px-5">
 
             <div class="col">
-                <div class="bg-dark text-white border border-secondary rounded-4 p-4 h-100 shadow-sm">
+                <div class="skill-card">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fas fa-code fa-2x" style="color: #12F7D6;"></i>
+                        <i class="bi bi-braces card-icon"></i>
+                        <img src="./images/code-svgrepo-com.svg" class="card-icon" alt="">
                         <div>
-                            <h5 style="color: var(--brand-2);">Modern Application Development</h5>
+                            <h5 style="color: var(--accent);">Modern Application Development</h5>
                             <p class="mb-0">Build, test, and maintain full-featured apps following latest standards and technologies.</p>
                         </div>
                     </div>
@@ -394,11 +455,13 @@
             </div>
 
             <div class="col">
-                <div class="bg-dark text-white border border-secondary rounded-4 p-4 h-100 shadow-sm">
+                <div class="skill-card">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fas fa-users fa-2x" style="color: #12F7D6;"></i>
+                        <i class="bi bi-people card-icon"></i>              <!-- Represents collaboration with users -->
+
+
                         <div>
-                            <h5 style="color: var(--brand-2);">Requirements Allocation</h5>
+                            <h5 style="color: var(--accent);">Requirements Allocation</h5>
                             <p class="mb-0">Work closely with analysts and users to gather needs, conduct feasibility studies, and ensure readiness.</p>
                         </div>
                     </div>
@@ -406,11 +469,12 @@
             </div>
 
             <div class="col">
-                <div class="bg-dark text-white border border-secondary rounded-4 p-4 h-100 shadow-sm">
+                <div class="skill-card">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fas fa-file-alt fa-2x" style="color: #12F7D6;"></i>
+                        <i class="bi bi-file-earmark-text card-icon"></i> <!-- Document with text -->
+
                         <div>
-                            <h5 style="color: var(--brand-2);">SDLC Documentation</h5>
+                            <h5 style="color: var(--accent);">SDLC Documentation</h5>
                             <p class="mb-0">Maintain clear documentation across all phases of the Software Development Life Cycle.</p>
                         </div>
                     </div>
@@ -418,11 +482,13 @@
             </div>
 
             <div class="col">
-                <div class="bg-dark text-white border border-secondary rounded-4 p-4 h-100 shadow-sm">
+                <div class="skill-card">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fas fa-shield-alt fa-2x" style="color: #12F7D6;"></i>
+                        <i class="bi bi-shield-check card-icon"></i>    <!-- Shield with a checkmark (security + approval) -->
+
+
                         <div>
-                            <h5 style="color: var(--brand-2);">Best Practices & Security</h5>
+                            <h5 style="color: var(--accent);">Best Practices & Security</h5>
                             <p class="mb-0">Apply secure, efficient programming practices with an eye on performance and user safety.</p>
                         </div>
                     </div>
@@ -433,111 +499,204 @@
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <!-- Tools & Technologies Section -->
-        <h2 class="text-center mt-5 mb-4" style="color: var(--brand-1); font-size: 36px; font-weight: bold;">🛠️ Tools & Technologies</h2>
 
-        <div class="row row-cols-1 row-cols-md-2 g-4 text-center">
+<!-- Tools & Technologies Section -->
+<section id="tools" class="py-5" style="background-color: var(--background);">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: var(--primary); font-size: 36px; font-weight: bold;">
+            Tools & Technologies
+        </h2>
+
+        <!-- Tabs -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+            <button class="filter-tab active" data-filter="all">All Skills</button>
+            <button class="filter-tab" data-filter="frontend">Frontend</button>
+            <button class="filter-tab" data-filter="backend">Backend</button>
+            <button class="filter-tab" data-filter="mobile">Mobile Development</button>
+            <button class="filter-tab" data-filter="database">Database</button>
+            <button class="filter-tab" data-filter="tools">DevOps & Tools</button>
+        </div>
+
+        <!-- Icons Grid -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-4 justify-content-center">
 
             <!-- Frontend -->
-            <div class="col">
-                <div class="bg-dark p-4 rounded-4 border border-secondary h-100">
-                    <h5 class="mb-4" style="color: var(--brand-1);">🎨 Frontend</h5>
-                    <div class="d-flex flex-wrap justify-content-center gap-4">
-                        <div class="text-center">
-                            <i class="fab fa-html5 fa-2x" style="color: #E44D26;"></i>
-                            <div class="small mt-1">HTML</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fab fa-css3-alt fa-2x" style="color: #1572B6;"></i>
-                            <div class="small mt-1">CSS</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fab fa-js fa-2x" style="color: #F7DF1E;"></i>
-                            <div class="small mt-1">JavaScript</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-random fa-2x" style="color: #12F7D6;"></i>
-                            <div class="small mt-1">AJAX</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-code fa-2x" style="color: #12F7D6;"></i>
-                            <div class="small mt-1">JSON</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fab fa-bootstrap fa-2x" style="color: #7952B3;"></i>
-                            <div class="small mt-1">Bootstrap</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fab fa-figma fa-2x" style="color: #A259FF;"></i>
-                            <div class="small mt-1">Figma</div>
-                        </div>
-                    </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                    <p class="tool-label">HTML</p>
                 </div>
             </div>
-
-            <!-- Mobile Development -->
-            <div class="col">
-                <div class="bg-dark p-4 rounded-4 border border-secondary h-100">
-                    <h5 class="mb-4" style="color: var(--brand-1);">📱 Mobile Development</h5>
-                    <div class="d-flex justify-content-center gap-4">
-                        <div class="text-center">
-                            <i class="fab fa-react fa-2x" style="color: #61DBFB;"></i>
-                            <div class="small mt-1">React Native</div>
-                        </div>
-                    </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+                    <p class="tool-label">CSS</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    <p class="tool-label">JavaScript</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" />
+                    <p class="tool-label">jQuery</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+                    <p class="tool-label">Bootstrap</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item frontend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+                    <p class="tool-label">Figma</p>
                 </div>
             </div>
 
             <!-- Backend -->
-            <div class="col">
-                <div class="bg-dark p-4 rounded-4 border border-secondary h-100">
-                    <h5 class="mb-4" style="color: var(--brand-1);">🛠️ Backend</h5>
-                    <div class="d-flex justify-content-center flex-wrap gap-4">
-                        <div class="text-center">
-                            <i class="fab fa-php fa-2x" style="color: #8892BF;"></i>
-                            <div class="small mt-1">PHP</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fab fa-laravel fa-2x" style="color: #F9322C;"></i>
-                            <div class="small mt-1">Laravel</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-link fa-2x" style="color: #12F7D6;"></i>
-                            <div class="small mt-1">REST API</div>
-                        </div>
-                    </div>
+            <div class="col text-center tool-item backend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+                    <p class="tool-label">PHP</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item backend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+                    <p class="tool-label">Laravel</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item backend">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="REST API" />
+                    <p class="tool-label">RESTful API</p>
                 </div>
             </div>
 
-            <!-- Databases -->
-            <div class="col">
-                <div class="bg-dark p-4 rounded-4 border border-secondary h-100">
-                    <h5 class="mb-4" style="color: var(--brand-1);">🗃️ Databases</h5>
-                    <div class="d-flex justify-content-center flex-wrap gap-4">
-                        <div class="text-center">
-                            <i class="fas fa-database fa-2x" style="color: #CC2927;"></i>
-                            <div class="small mt-1">SQL Server</div>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-server fa-2x" style="color: #00758F;"></i>
-                            <div class="small mt-1">MySQL</div>
-                        </div>
-                    </div>
+            <!-- Mobile -->
+            <div class="col text-center tool-item mobile">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" />
+                    <p class="tool-label">React Native</p>
                 </div>
             </div>
 
+            <!-- Database -->
+            <div class="col text-center tool-item database">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                    <p class="tool-label">MySQL</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item database">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" />
+                    <p class="tool-label">SQL</p>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="col text-center tool-item tools">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                    <p class="tool-label">Git</p>
+                </div>
+            </div>
+            <div class="col text-center tool-item tools">
+                <div class="tool-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                    <p class="tool-label">GitHub</p>
+                </div>
+            </div>
         </div>
-
     </div>
 </section>
 
+<script>
+    const tabs = document.querySelectorAll('.filter-tab');
+    const items = document.querySelectorAll('.tool-item');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.dataset.filter;
+            items.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 
 
 
+<!--certificates-->
+<section class="py-5" id="certificates">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Certificates</h2>
+        <div id="certificatesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-3">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun04.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun02.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun05.jpg'); background-size:cover; height:200px;">
+                                <h3 class="text-white">Text in the panel.</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun03.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-4">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun01.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun03.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card d-flex justify-content-center align-items-center" style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/flexfun06.jpg'); background-size:cover; height:200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#certificatesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#certificatesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
 
-
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
