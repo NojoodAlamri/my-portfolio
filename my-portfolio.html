@@ -10,12 +10,21 @@
     <style>
         /* Theme Variables */
         :root {
-            --primary:   #FFFFFF;  /* Bright Turquoise */
-            --secondary: #FFFFFF;  /* Soft Blue-Teal */
-            --accent:    #FFFFFF;  /* Bright Pink-Mauve */
             --background:#1F242C;  /* Deep Navy Gray */
-            --surface:   #2A2F38;  /* Slightly lighter for cards */
-            --text:      #FFFFFF;  /* Pure white for high readability */
+            --surface:   #2A2E35;  /* Slightly lighter for cards */
+
+            --text: #FFFFFF;
+            --text-secondary: #A0A3B1;
+
+            --primary:   #00E6B8;  /*CTAs and icons. */
+            --secondary: #00C2FF;  /* Soft Blue-Teal */
+
+            --accent-color: #00C2FF;
+            --accent-gradient: linear-gradient(90deg, #00E6B8, #00C2FF);
+
+
+
+
 
         }
 
@@ -74,26 +83,24 @@
         .btn-outline {
             border-radius: 32px;
             background: var(--surface);
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid var(--text);
+            color: var(--text);
             padding: 0.75rem 1.5rem;
         }
 
         .btn-outline:hover {
             background: var(--primary);
-            color: var(--grey);
         }
 
         .btn-filled{
             border-radius: 32px;
             background: var(--primary);
             border: 2px solid var(--primary);
-            color: var(--grey);
             padding: 0.75rem 1.5rem;
         }
         .btn-filled:hover{
             background: var(--surface);
-            border: 2px solid var(--primary);
+            border: 2px solid var(--text);
             color: var(--text);
 
         }
@@ -163,7 +170,7 @@
 
         /* Text */
         .intro-text {
-            color: var(--primary);
+            color: var(--text);
             font-size: 22px;
         }
 
@@ -185,7 +192,7 @@
             font-size: 20px;
             margin-top: 20px;
             padding-bottom: 20px;
-            color: white;
+            color: var(--text);
         }
 
 
@@ -374,9 +381,75 @@
             opacity: 1;  /* يتأكد من وضوح اللون */
         }
 
+        .section-title {
+            color: var(--text);
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
 
+        }
 
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 180px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .cta-btn {
 
+        }
+
+        .btn-gradient {
+            border-radius: 32px;
+            background: var(--accent-gradient);
+            border: none;
+            color: #1F242C;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 rgba(0, 194, 255, 0); /* start without glow */
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .btn-gradient:hover {
+            box-shadow: 0 0 12px rgba(0, 194, 255, 0.6), 0 0 24px rgba(0, 230, 184, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-icon-gradient i {
+            background: linear-gradient(90deg, #00E6B8, #00C2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .btn-icon-gradient:hover i {
+            transform: translateY(3px);
+            filter: brightness(1.2);
+        }
+        .scroll-icon {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            text-decoration: none;
+        }
 
     </style>
 </head>
@@ -397,6 +470,10 @@
                     <li><a href="#projects" class="nav-link">Projects</a></li>
 <!--                    <li><a href="#projects" class="nav-link">certificates</a></li>-->
                     <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <a href="#" class="btn btn-gradient" title="Download Resume"><i class="fa-solid fa-file-arrow-down"></i></a>
+
+                    </li>
 
                 </ul>
             </nav>
@@ -427,14 +504,22 @@
         <p class="description-text">
             I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
-        <a href="#" class="btn btn-filled mt-4">View Projects </a>
-        <a href="#" class="btn btn-outline mt-4">Download Resume</a>
+        <a href="#" class="btn btn-gradient mt-4" style="">View Projects </a>
+
     </div>
+    <!-- Gradient Icon at Bottom Center -->
+    <a href="#" class="btn btn-icon-gradient scroll-icon">
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
 </section>
+
 
 <section id="highlights" class="py-5" style="background-color: var(--background);">
     <div class="container">
-        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 40px; font-weight: bold;">Highlights</h2>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <h2 class="section-title">Highlights</h2>
+        </div>
+
 
         <!-- Item 1 -->
         <div class="mb-4 py-4 px-5 rounded-4 d-flex justify-content-between align-items-center shadow-sm" style="background-color: var(--surface);">
@@ -479,8 +564,9 @@
 <!-- Skills Section -->
 <section class="py-5" id="skills">
     <div class="container">
-
-        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Skills</h2>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <h2 class="text-center mb-5 section-title">Skills</h2>
+        </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 px-5">
 
             <div class="col">
@@ -545,9 +631,12 @@
 <!-- Tools & Technologies Section -->
 <section id="tools" class="py-5" style="background-color: var(--background);">
     <div class="container">
-        <h2 class="text-center mb-4" style="color: var(--primary); font-size: 36px; font-weight: bold;">
-            Tools & Technologies
-        </h2>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <h2 class="text-center mb-4 section-title">
+                Tools & Technologies
+            </h2>
+        </div>
+
 
         <!-- Tabs -->
         <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
@@ -646,7 +735,10 @@
 <!--projects-->
 <section id="projects" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Latest Projects</h2>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <h2 class="text-center mb-5 section-title">Latest Projects</h2>
+
+        </div>
         <div class="row g-4">
 
             <!-- Project Card -->
@@ -714,7 +806,10 @@
 <!--certificates-->
 <section class="py-5" id="certificates">
     <div class="container">
-        <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Certificates</h2>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <h2 class="text-center mb-5 section-title">Certificates</h2>
+
+        </div>
 
         <div id="carouselCertificates" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -808,7 +903,10 @@
 <section id="contact" class="py-5" style="background-color: var(--background);">
     <div class="container">
         <div class="row align-items-start g-5">
-            <h2 class="text-center mb-5" style="color: var(--primary); font-size: 36px; font-weight: bold;">Contact Me</h2>
+            <div style="display: flex; align-items: center; justify-content: center">
+                <h2 class="section-title">Contact Me</h2>
+
+            </div>
 
             <!-- Contact Info -->
             <div class="col-md-6 text-start">
