@@ -569,8 +569,20 @@ section {
         z-index: 3;
 
     }
+    .swiper-pagination-bullets.swiper-pagination-horizontal{
+        bottom:  -30px !important;
+    }
+    .swiper-pagination-bullet {
+        background: var(--text)!important;
+        opacity: 1;
+    }
 
-    /* Hide arrows on small screens */
+    .swiper-pagination-bullet-active {
+        background: var(--primary)!important;
+    }
+
+    /* Hide arrows on
+    small screens */
     @media (max-width: 767.98px) {
         .swiper-button-prev,
         .swiper-button-next {
