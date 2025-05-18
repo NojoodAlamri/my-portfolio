@@ -1,4 +1,18 @@
-    /* Theme Variables */
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600&family=General+Sans:wght@400;500&display=swap');
+
+body {
+    font-family: 'General Sans', sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Clash Display', sans-serif;
+}
+
+
+
+
+
+
+
 :root {
     --background:#1F242C;  /* Deep Navy Gray */
     --surface:   #2A2E35;  /* Slightly lighter for cards */
@@ -176,7 +190,19 @@ section {
     margin-top: 10px;
     color: white;
 }
+.name-text span {
+    text-decoration: underline;
+    text-decoration-color: #00E6B8;  /* custom accent color */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
 
+.about-me-text{
+    font-size: 56px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: white;
+}
 .build-text {
     font-size: 48px;
     color: var(--accent);
@@ -582,13 +608,22 @@ section {
     }
 
 
+    @media (hover: none) {
+        .nav-link:hover {
+            background: unset !important;
+            color: unset !important;
+            text-decoration: unset !important;
+            box-shadow: unset !important;
+            transform: unset !important;
+            border: unset !important;
+        }
+    }
 
 
 
 
 
-    /* Hide arrows on
-    small screens */
+    /* ------------------ MOBILE FIXES ------------------ */
     @media (max-width: 767.98px) {
         .swiper-button-prev,
         .swiper-button-next {
@@ -617,25 +652,6 @@ section {
         .custom-navbar-toggler{
             border: none;
         }
-
-    }
-    @media (hover: none) {
-        .nav-link:hover {
-            background: unset !important;
-            color: unset !important;
-            text-decoration: unset !important;
-            box-shadow: unset !important;
-            transform: unset !important;
-            border: unset !important;
-        }
-    }
-
-
-
-
-
-    /* ------------------ MOBILE FIXES ------------------ */
-    @media (max-width: 767.98px) {
         .nav-list {
             flex-direction: column;
             gap: 16px;
@@ -656,7 +672,7 @@ section {
         }
 
         .name-text {
-            font-size: 36px;
+            font-size: 30px;
         }
 
         .description-text {
@@ -716,4 +732,13 @@ section {
             padding: 2rem 1rem !important;
         }
     }
+
+    /** {*/
+    /*    border: 1px solid red !important;*/
+    /*}*/
+
+    /*html, body {*/
+    /*    overflow-x: hidden;*/
+    /*}*/
+
 
