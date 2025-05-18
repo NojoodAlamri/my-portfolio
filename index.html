@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -16,8 +17,12 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
     <div class="container">
-        <div class="collapse navbar-collapse justify-content-center">
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center">
             <nav class="custom-rounded-navbar">
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link active">About</a></li>
@@ -62,10 +67,11 @@
             I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
         <a href="#" class="btn btn-gradient mt-4" style="">View Projects </a>
+        <a href="#" class="btn btn-gradient-outline mt-4" style="">Download Resume</a>
 
     </div>
     <!-- Gradient Icon at Bottom Center -->
-    <a href="#" class="btn btn-icon-gradient scroll-icon">
+    <a href="#highlights" class="btn btn-icon-gradient scroll-icon">
         <i class="fa-solid fa-chevron-down"></i>
     </a>
 </section>
@@ -79,7 +85,7 @@
 
 
         <!-- Item 1 -->
-        <div class="mb-4 py-4 px-5 rounded-4 d-flex justify-content-between align-items-center shadow-sm" style="background-color: var(--surface);">
+        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color: var(--surface);">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/uj-logo.svg" alt="UJ Logo" style="height: 50px;">
                 <div>
@@ -91,7 +97,7 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="mb-4 py-4 px-5 rounded-4 d-flex justify-content-between align-items-center shadow-sm" style="background-color:  var(--surface);">
+        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color:  var(--surface);">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/sce-logo.svg" alt="SCE Logo" style="height: 50px;">
                 <div>
@@ -103,7 +109,7 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="mb-4 py-4 px-5 rounded-4 d-flex justify-content-between align-items-center shadow-sm" style="background-color:  var(--surface);">
+        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color:  var(--surface);">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/ksau-logo.svg" alt="KSAU Logo" style="height: 50px;">
                 <div>
@@ -127,7 +133,7 @@
         <div class="row row-cols-1 row-cols-md-2 g-4 px-5">
 
             <div class="col">
-                <div class="skill-card">
+                <div class="skill-card ">
                     <div class="d-flex align-items-start gap-3">
                         <i class="bi bi-braces card-icon"></i>
                         <img src="./images/code-svgrepo-com.svg" class="card-icon" alt="">
@@ -170,8 +176,6 @@
                 <div class="skill-card">
                     <div class="d-flex align-items-start gap-3">
                         <i class="bi bi-shield-check card-icon"></i>    <!-- Shield with a checkmark (security + approval) -->
-
-
                         <div>
                             <h5 style="color: var(--text);">Best Practices & Security</h5>
                             <p class="mb-0">Apply secure, efficient programming practices with an eye on performance and user safety.</p>
@@ -179,7 +183,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -313,7 +316,7 @@
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" alt="JavaScript" />
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="20" alt="PHP" />
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="20" alt="SQL" />
-                            <a href="https://conj.ksau-hs.edu.sa/standalone/basic-contents/mental-health-scales/index.php" title="Live Website" target="_blank" class="ms-auto text-white">
+                            <a href="./mental-health-scales.html" title="Live Website" target="_blank" class="ms-auto text-white">
                                 <i class="fas fa-external-link-alt fa-lg"></i>
                             </a>
                         </div>
@@ -380,58 +383,69 @@
 
 
 <!--certificates-->
+
+
 <section class="py-5" id="certificates">
     <div class="container">
         <div style="display: flex; align-items: center; justify-content: center">
             <h2 class="text-center mb-5 section-title">Certificates</h2>
-
         </div>
-
-        <div id="carouselCertificates" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                            <img src="./images/certificates/1.png" alt="Meta Certificate" class="img-fluid rounded" style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                        </div>
-                        <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                            <img src="./images/certificates/1.png" alt="Meta Certificate" class="img-fluid rounded" style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                        </div>
-                        <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                            <img src="./images/certificates/1.png" alt="Meta Certificate" class="img-fluid rounded" style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                        </div>
-                        <div class="col-12 col-md d-flex align-items-center justify-content-center">
-                            <img src="./images/certificates/1.png" alt="Meta Certificate" class="img-fluid rounded" style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                        </div>
+        <div class="swiper-container-wrapper position-relative">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/1.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
                     </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/certificates/2.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                    </div>
+                    <!-- Add more slides as needed -->
                 </div>
-                <!--                <div class="carousel-item">-->
-                <!--                    <div class="row">-->
-                <!--                        <div class="col-12 col-md">-->
-                <!--                            <div style="background-image:url('./images/certificates/1.png'); height: 200px; background-size: cover; background-position: center; border-radius: 12px;"></div>-->
-                <!--                        </div>-->
-                <!--                        <div class="col-12 col-md">-->
-                <!--                            <div style="background-image:url('./images/certificates/1.png'); height: 200px; background-size: cover; background-position: center; border-radius: 12px;"></div>-->
-                <!--                        </div>-->
-                <!--                        <div class="col-12 col-md">-->
-                <!--                            <div style="background-image:url('./images/certificates/1.png'); height: 200px; background-size: cover; background-position: center; border-radius: 12px;"></div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+
+
             </div>
-
-            <!-- Navigation -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCertificates" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselCertificates" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Arrows (hidden on mobile via CSS) -->
+            <div class="swiper-button-next d-none d-md-block"></div>
+            <div class="swiper-button-prev d-none d-md-block"></div>
         </div>
-
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 1, // Move 1 slide at a time
+                },
+            },
+            loop: true, // Set to true if you want infinite scroll
+        });
+
+    </script>
 </section>
 
 
@@ -497,6 +511,33 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Get all section elements and corresponding nav links
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-list .nav-link");
+
+    function activateNavLink() {
+        let currentSection = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // adjust offset
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", activateNavLink);
+</script>
 
 
 

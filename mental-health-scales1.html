@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Nojood - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style/styles.css">
+    <style>
+        * { color: var(--text); }
+        .sub-title {
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .sub-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+        .section-box {
+            background-color: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+        }
+        .disclaimer-box {
+            background-color: #222;
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 50%;
+            font-size: 20px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container">
+        <div class="collapse navbar-collapse justify-content-center">
+            <nav class="custom-rounded-navbar">
+                <ul class="nav-list">
+                    <li><a href="./index.html#about" class="nav-link active">About</a></li>
+                    <li><a href="#highlights" class="nav-link">Highlights</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#tools" class="nav-link">Tools & Tech</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="py-5 my-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="section-title">Mental Health Scales</h2>
+            <p class="lead">Developed for the College of Nursing – KSAU-HS (Global Mental Health Day Project)</p>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-sm-12 col-md-6">
+                <img src="./images/mental-health-scales/hero.png" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-sm-12 col-md-3">
+                <a href="#" class="btn btn-outline w-100">
+                    <i class="fa-solid fa-link"></i> View Live Site
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+            <div class="section-box">
+                <h3><i class="fa-solid fa-circle-info"></i> <span class="sub-title">About the Project</span></h3>
+                <p>A web-based tool developed for Global Mental Health Day, designed to digitize psychological assessments and provide users with private, personalized results all while promoting awareness and access to mental health support resources.</p>
+                <p>This was one of the first projects I worked on after starting my job, and it turned out to be a truly enjoyable and rewarding experience. It marked the beginning of my journey with a wonderful and collaborative team. Despite the time constraints, we managed to deliver a polished and fully functional platform in less than a week.</p>
+            </div>
+
+            <div class="section-box">
+                <h3><i class="fa-solid fa-bullseye"></i> <span class="sub-title">Goals</span></h3>
+                <ul class="list-unstyled">
+                    <li><strong>Promote mental health awareness</strong> through digital, self-assessment tools during Global Mental Health Day.</li>
+                    <li><strong>Transform traditional paper-based scales</strong> into accessible, user-friendly digital versions.</li>
+                    <li><strong>Empower users</strong> with personal insights and immediate access to mental health resources.</li>
+                    <li><strong>Ensure privacy</strong> by calculating results client-side without storing user data.</li>
+                    <li><strong>Design for inclusivity and clarity</strong>, with a mobile-first, responsive approach.</li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3><i class="fa-solid fa-list-check"></i> <span class="sub-title">Key Features</span></h3>
+                <ul class="list-unstyled">
+                    <li><strong>Digital Conversion:</strong> Official psychological scales fully digitized into an interactive web experience.</li>
+                    <li><strong>Responsive Design:</strong> Optimized for seamless use across all screen sizes and devices.</li>
+                    <li><strong>Instant, Personalized Results:</strong> Real-time feedback with zero data retention.</li>
+                    <li><strong>Structured Backend:</strong> SQL Server stores questions and scoring logic for accuracy and flexibility.</li>
+                    <li><strong>Built-in Support Links:</strong> Easy access to academic counseling and national mental health resources.</li>
+                    <li><strong>Ethical Disclaimer:</strong>
+                        <div class="disclaimer-box">
+                            "These assessments are designed to give you insight into your mental state. They are not a substitute for professional diagnosis."
+                        </div>
+                    </li>
+                    <li><strong>Campaign Support Materials:</strong> Custom poster designed to promote awareness and platform use.</li>
+                    <li><strong>User-Centered Design:</strong> Focused on clarity, accessibility, and smooth navigation.</li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3><i class="fa-solid fa-laptop-code"></i> <span class="sub-title">Tech Stack</span></h3>
+                <ul class="list-unstyled">
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>SQL Server</li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3 class="mb-3" style="font-weight: bold;">
+                    <i class="fa-solid fa-image"></i>
+                    <span class="sub-title">Screenshots</span>
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <img src="./images/mental-health-scales/screenshot1.png" class="img-fluid rounded shadow-sm" alt="Screenshot 1">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./images/mental-health-scales/screenshot2.png" class="img-fluid rounded shadow-sm" alt="Screenshot 2">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./images/mental-health-scales/screenshot3.png" class="img-fluid rounded shadow-sm" alt="Screenshot 3">
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+<footer class="d-flex flex-wrap justify-content-center align-items-center py-4 px-3 mt-5 border-top" style="background-color: var(--background); color: var(--text);">
+    <span class="mb-0 small">© 2025 Eng. Nojood. All rights reserved.</span>
+</footer>
+
+<script>
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'block';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
