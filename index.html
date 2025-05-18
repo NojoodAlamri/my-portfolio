@@ -17,12 +17,15 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
     <div class="container">
+<div>
+    <button class="navbar-toggler custom-navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <i class="fas fa-bars custom-toggler-icon"></i>
+    </button>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+</div>
 
-        <div class="collapse navbar-collapse justify-content-center">
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <nav class="custom-rounded-navbar">
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link active">About</a></li>
@@ -30,19 +33,17 @@
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#tools" class="nav-link">Tools & Tech</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <!--                    <li><a href="#projects" class="nav-link">certificates</a></li>-->
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <!--                    <li>-->
-                    <!--                        <a href="#" class="btn btn-gradient" title="Download Resume"><i class="fa-solid fa-file-arrow-down"></i></a>-->
-
-                    <!--                    </li>-->
-
                 </ul>
             </nav>
-
         </div>
+
     </div>
 </nav>
+
+
+
+
 
 <!-- Sidebar Icons -->
 <!--<div class="sidebar-icons">-->
@@ -456,11 +457,6 @@
 </section>
 
 
-
-
-
-
-
 <section id="contact" class="py-5" style="background-color: var(--background);">
     <div class="container">
         <div class="row align-items-start g-5">
@@ -546,6 +542,17 @@
     window.addEventListener("scroll", activateNavLink);
 </script>
 
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.getElementById('navbarContent');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+</script>
 
 
 

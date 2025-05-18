@@ -581,12 +581,52 @@ section {
         background: var(--primary)!important;
     }
 
+
+
+
+
+
+
     /* Hide arrows on
     small screens */
     @media (max-width: 767.98px) {
         .swiper-button-prev,
         .swiper-button-next {
             display: none;
+        }
+        .custom-navbar, .custom-rounded-navbar{
+            background: var(--surface);
+            /*box-shadow: 0 4px 10px rgba(0,0,0,0.2);*/
+
+        }
+        .custom-toggler-icon {
+            color: var(--text); /* Your custom color */
+            font-size: 2rem;
+        }
+        .nav-link.active {
+            background-color: transparent;
+            color: #ccc;
+            font-weight: bolder;
+            box-shadow: none;
+            border-bottom: 2px solid var(--secondary);
+        }
+        .nav-link{
+            border-radius: 0;
+
+        }
+        .custom-navbar-toggler{
+            border: none;
+        }
+
+    }
+    @media (hover: none) {
+        .nav-link:hover {
+            background: unset !important;
+            color: unset !important;
+            text-decoration: unset !important;
+            box-shadow: unset !important;
+            transform: unset !important;
+            border: unset !important;
         }
     }
 
@@ -676,3 +716,4 @@ section {
             padding: 2rem 1rem !important;
         }
     }
+
