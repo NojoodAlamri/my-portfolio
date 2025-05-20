@@ -113,6 +113,43 @@
         position: relative;
     }
 
+    .breadcrumb {
+        padding-top: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+    .breadcrumb-item a {
+        color: var(--secondary); /* currently too bright */
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .breadcrumb-item a:hover {
+        color: var(--primary); /* a softer hover to stay sleek */
+    }
+
+    .breadcrumb-item.active {
+        color: #e6e7e9
+    ; /* less harsh than default gray */
+    }
+    @media (max-width: 768px) {
+        .breadcrumb {
+            padding-left: 1rem;
+        }
+    }
+    .skill-card {
+        background-color: #2f3239; /* subtle contrast from #2b2e34 */
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        color: var(--text);
+        font-size: 1.05rem;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
 
 </style>
@@ -120,26 +157,26 @@
 
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+<!-- Breadcrumb -->
+<section class="py-2" style="background-color: var(--surface)">
     <div class="container">
-        <div class="collapse navbar-collapse justify-content-center">
-            <nav class="custom-rounded-navbar">
-                <ul class="nav-list">
-                    <li><a href="./index.html#about" class="nav-link active">About</a></li>
-                    <li><a href="#highlights" class="nav-link">Highlights</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#tools" class="nav-link">Tools & Tech</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-0 mb-0" style="font-size: 0.95rem;">
+                <li class="breadcrumb-item">
+                    <a href="./index.html" class="text-decoration-none" style="color: var(--secondary);">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="./projects.html" class="text-decoration-none" style="color: var(--secondary);">Projects</a>
+                </li>
+                <li class="breadcrumb-item active" >Mental Health Scales</li>
+            </ol>
+        </nav>
     </div>
-</nav>
+</section>
 
 
 <!--hero-->
-<section id="hero" class="py-5 my-5">
+<section id="hero" class="py-5 ">
     <div class="container">
         <div class="text-center mb-4">
             <h2 class="section-title">Mental Health Scales</h2>
@@ -204,28 +241,32 @@
                     </h3>
 
                     <div class="row">
-                        <div class="col">
-                            <div class="skill-card">
-                                <strong>Promote mental health awareness</strong>
-                                through digital, self-assessment tools during Global Mental Health Day.
+                        <div class="col-md-4 col-sm-12">
+                            <div class="skill-card text-center">
+                                <i class="fa-solid fa-heartbeat mb-3" style="font-size: 28px; color: var(--secondary);"></i>
+                                <p><strong>Promote mental health awareness</strong> through digital, self-assessment tools during Global Mental Health Day.</p>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="skill-card">
-                                <strong>Empower users</strong> with personal insights and immediate access to mental
-                                health resources.
+                        <div class="col-md-4 col-sm-12">
+                            <div class="skill-card text-center">
+                                <i class="fa-solid fa-user-shield mb-3" style="font-size: 28px; color: var(--secondary);"></i>
+                                <p><strong>Empower users</strong> with personal insights and immediate access to mental health resources.</p>
                             </div>
                         </div>
 
-                        <div class="col">
-                            <div class="skill-card">
-                                <strong>
-                                    Design for inclusivity and clarity
-                                </strong>, with a mobile-first, responsive approach.
+                        <div class="col-md-4 col-sm-12">
+                            <div class="skill-card text-center">
+                                <i class="fa-solid fa-universal-access mb-3" style="font-size: 28px; color: var(--secondary);"></i>
+                                <p><strong>Design for inclusivity and clarity</strong>, with a mobile-first, responsive approach.</p>
                             </div>
                         </div>
                 </div>
             </div>
+
+
+
+
+
 
 
 
@@ -255,10 +296,19 @@
                             <p class="tool-label">JavaScript</p>
                         </div>
                         <div class="tool-card tool-item frontend">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-                                 alt="jQuery"/>
-                            <p class="tool-label">jQuery</p>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+                            <p class="tool-label">Bootstrap</p>
                         </div>
+                        <div class="tool-card tool-item backend">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+                            <p class="tool-label">PHP</p>
+                        </div>
+                        <div class="tool-card tool-item database">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL" />
+                            <p class="tool-label">SQL</p>
+                        </div>
+
+
                     </div>
             </div>
 
@@ -310,60 +360,56 @@
             </div>
 
 
-<!--            Screenshots-->
-            <div class="row justify-content-center mt-4 pt-5">
-                    <h3 class="mb-2 d-flex justify-content-center" style="font-weight: bold;">
-                        <span class="sub-title">Screenshots</span>
-                    </h3>
-
-                    <div id="carouselScreenshots" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row g-3 justify-content-center">
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+            <section class="py-5" id="screenshots">
+                <div class="container">
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <h2 class="text-center mb-5 section-title">Screenshots</h2>
+                    </div>
+                    <div class="swiper-container-wrapper position-relative">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a data-fancybox="screenshots" href="./images/mental-health-scales/s1.png" data-caption="Screenshot 1">
                                         <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
+                                             style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                                    </a>
                                 </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="row g-3 justify-content-center">
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                <div class="swiper-slide">
+                                    <a data-fancybox="screenshots" href="./images/mental-health-scales/s1.png" data-caption="Screenshot 1">
                                         <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
-                                             style="max-height: 300px; object-fit: contain; border: 1px solid #444;">
-                                    </div>
+                                             style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                                    </a>
                                 </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="screenshots" href="./images/mental-health-scales/s1.png" data-caption="Screenshot 1">
+                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
+                                             style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="screenshots" href="./images/mental-health-scales/s1.png" data-caption="Screenshot 1">
+                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
+                                             style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="screenshots" href="./images/mental-health-scales/s1.png" data-caption="Screenshot 1">
+                                        <img src="./images/mental-health-scales/s1.png" class="img-fluid rounded"
+                                             style="max-height:300px; object-fit:contain; border:1px solid #444;">
+                                    </a>
+                                </div>
+                                <!-- أضف المزيد حسب الحاجة -->
                             </div>
                         </div>
 
-                        <!-- Updated navigation target ID to match carousel ID -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselScreenshots" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselScreenshots" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                        <!-- Pagination and Arrows -->
+                        <div class="swiper-pagination mt-3"></div>
+                        <div class="swiper-button-next d-none d-md-block"></div>
+                        <div class="swiper-button-prev d-none d-md-block"></div>
                     </div>
-            </div>
+                </div>
+            </section>
+
 
 
             <div class="row justify-content-center mt-4 pt-5">
@@ -413,6 +459,35 @@
         style="background-color: var(--background); color: var(--text);">
     <span class="mb-0 small">© 2025 Eng. Nojood. All rights reserved.</span>
 </footer>
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                },
+            },
+            loop: true,
+        });
+    </script>
 
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>

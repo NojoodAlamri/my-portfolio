@@ -11,7 +11,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
+<?php
 
+$certificateFiles = [
+
+
+    "2025-appreciation-alumni-day.png",
+    "2025-appreciation-nursing-conference.png",
+    "2025-bootstrap.png",
+    "2023-laravel.png",
+    "2023-python.png",
+    "2022-coop.png",
+    "2023-backend.png",
+    "2023-database.png",
+    "2023-frontend.png",
+
+
+];
+
+?>
+?>
 <body>
 
 <!-- Navigation -->
@@ -382,8 +401,6 @@
             <div class="col-12 d-flex justify-content-center mt-4">
                 <a href="./projects.html">
                     <button class="btn btn-outline">View More</button>
-
-
                 </a>
             </div>
         </div>
@@ -405,44 +422,36 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
+                        <?php
+foreach ($certificateFiles as $certificate):
+                        ?>
                     <div class="swiper-slide">
-                        <a data-fancybox="certificates" href="./images/certificates/2023-backend.png" data-caption="Certificate 1">
-                            <img src="./images/certificates/2023-backend.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
-                        </a>
+
+    <a data-fancybox="certificates" href="./images/certificates/<?php echo $certificate ?>>" data-caption="Certificate">
+        <img src="./images/certificates/<?php echo $certificate ?>" class="img-fluid rounded" style="max-height:300px; object-fit:contain; ">
+    </a>
                     </div>
 
-                    <!-- Slide 2 (repeat as needed) -->
-                    <div class="swiper-slide">
-                        <a data-fancybox="certificates" href="./images/certificates/2023-backend.png" data-caption="Certificate 2">
-                            <img src="./images/certificates/2023-backend.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
-                        </a>
+<?php
+endforeach;
+                        ?>
                     </div>
-                    <!-- Slide 2 (repeat as needed) -->
-                    <div class="swiper-slide">
-                        <a data-fancybox="certificates" href="./images/certificates/2023-backend.png" data-caption="Certificate 2">
-                            <img src="./images/certificates/2023-backend.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
-                        </a>
-                    </div>
-                    <!-- Slide 2 (repeat as needed) -->
-                    <div class="swiper-slide">
-                        <a data-fancybox="certificates" href="./images/certificates/2023-backend.png" data-caption="Certificate 2">
-                            <img src="./images/certificates/2023-backend.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
-                        </a>
-                    </div>
-                    <!-- Slide 2 (repeat as needed) -->
-                    <div class="swiper-slide">
-                        <a data-fancybox="certificates" href="./images/certificates/2023-backend.png" data-caption="Certificate 2">
-                            <img src="./images/certificates/2023-backend.png" class="img-fluid rounded" style="max-height:300px; object-fit:contain; border:1px solid #444;">
-                        </a>
-                    </div>
-                    <!-- Repeat more slides here -->
+
+
                 </div>
-            </div>
 
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next d-none d-md-block"></div>
             <div class="swiper-button-prev d-none d-md-block"></div>
         </div>
+
+<!--        <div class="row pt-5">-->
+<!--            <div class="col-12 d-flex justify-content-center mt-4">-->
+<!--                <a href="./projects.html">-->
+<!--                    <button class="btn btn-outline">View More</button>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 
@@ -466,6 +475,10 @@
                 },
             },
             loop: true,
+            autoplay: {
+                delay: 3000, // time between slides in ms
+                disableOnInteraction: false, // keeps autoplay running even after manual navigation
+            },
         });
 
 
