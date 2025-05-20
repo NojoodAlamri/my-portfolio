@@ -30,7 +30,7 @@ $certificateFiles = [
 ];
 
 ?>
-?>
+
 <body>
 
 <!-- Navigation -->
