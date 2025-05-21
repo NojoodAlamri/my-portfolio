@@ -475,7 +475,7 @@ $certificateFiles = [
             <div class="col-md-6 text-start mt-md-4 mt-sm-0">
                 <div class="mt-md-4 mt-sm-0">
                     <p class="mb-2 text-white"><i class="fas fa-envelope me-2" style="color: var(--accent);"></i> <strong>Mail</strong></p>
-                    <p class="text-light small">nojood@example.com</p>
+                    <p class="text-light small">nojood-alamri@outlook.com</p>
 
                     <p class="mb-2 text-white mt-4"><i class="fas fa-map-marker-alt me-2" style="color: var(--accent);"></i> <strong>Location</strong></p>
                     <p class="text-light small">Jeddah, Saudi Arabia</p>
@@ -483,10 +483,10 @@ $certificateFiles = [
 
                 <!-- Social Icons -->
                 <div class="mt-4 d-flex gap-3">
-                    <a href="#" class="text-white"><i class="fab fa-github fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-dribbble fa-lg"></i></a>
+                    <a href="https://github.com/NojoodAlamri" class="text-white"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/eng-nojood-a-a5884b180/" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://x.com/nojoodCodes" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+
                 </div>
             </div>
 
