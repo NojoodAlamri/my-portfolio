@@ -1,3 +1,5 @@
+<?php include "./components/render-components.php"?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -321,82 +323,66 @@ $certificateFiles = [
             <h2 class="text-center mb-5 section-title">Latest Projects</h2>
 
         </div>
-        <div class="row g-4">
+        <div class="row">
 
             <!-- Project Card -->
             <div class="col-md-4">
-                <a href="./mental-health-scales.html" target="_blank" class="text-decoration-none text-white">
-                    <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between position-relative">
-                        <img src="./images/mental-health-scales/hero.png" class="mb-3 p-2" alt="Project Screenshot">
-                        <div class="text-white">
-                            <h5 class="mb-1">Mental Health Scales</h5>
-                            <p class="text-light small">A mental health self-assessment platform for common psychological conditions.</p>
-                            <div class="d-flex flex-wrap align-items-center gap-2">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" alt="HTML" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" alt="CSS" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" alt="JavaScript" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="20" alt="Bootstrap" />
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="20" alt="PHP" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="20" alt="SQL" />
-
-
-                                <span class="ms-auto position-relative z-2">
-<i class="fas fa-external-link-alt fa-lg text-white link-icon"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <span class="stretched-link"></span>
-                    </div>
-                </a>
-
+                <?php
+                $link = "./projects/mental-health-scales.php";
+                $image = "./images/mental-health-scales/hero.png";
+                $title = "Mental Health Scales";
+                $description =     "A mental health self-assessment platform for common psychological conditions.";
+                $techIcons = [
+                    "html5/html5-original.svg",
+                    "css3/css3-original.svg",
+                    "javascript/javascript-original.svg",
+                    "bootstrap/bootstrap-original.svg",
+                    "php/php-original.svg",
+                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
+                ];
+                renderProjectCard($link, $image, $title, $description, $techIcons)
+                ?>
             </div>
 
             <!-- Project Card -->
             <div class="col-md-4">
-                <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
-                    <!--                    <img src="./images/m3.png" class="img-fluid rounded mb-3" alt="Project Screenshot" style="height: 180px; object-fit: fill;">-->
-                    <img src="./images/p2.png" class=" mb-3 p-2" alt="Project Screenshot">
-                    <div class="text-white">
-                        <h5 class="mb-1">System Manual</h5>
-                        <p class="text-light small">A mental health self-assessment platform for common psychological conditions.
-                        </p>
-                        <div class="d-flex flex-wrap align-items-center gap-2">
-
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="20" alt="Bootstrap" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" alt="JavaScript" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="20" alt="PHP" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="20" alt="SQL" />
-                            <a href="https://conj.ksau-hs.edu.sa/standalone/basic-contents/mental-health-scales/index.php" title="Live Website" target="_blank" class="ms-auto text-white">
-                                <i class="fas fa-external-link-alt fa-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $link = "./projects/clinical-skill-tracker.php";
+                $image = "./images/clinical-skill-tracker/hero.png";
+                $title = "Clinical Skill Tracker";
+                $description = "A digital tool that helps students track and confirm clinical skills easily and accurately.";
+                $techIcons = [
+                    "html5/html5-original.svg",
+                    "css3/css3-original.svg",
+                    "javascript/javascript-original.svg",
+                    "bootstrap/bootstrap-original.svg",
+                    "php/php-original.svg",
+                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
+                ];
+                renderProjectCard($link, $image, $title, $description, $techIcons)
+                ?>
             </div>
 
             <!-- Project Card -->
             <div class="col-md-4">
-                <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
-                    <!--                    <img src="./images/m3.png" class="img-fluid rounded mb-3" alt="Project Screenshot" style="height: 180px; object-fit: fill;">-->
-                    <img src="./images/p3.png" class=" mb-3 p-2" alt="Project Screenshot">
-                    <div class="text-white">
-                        <h5 class="mb-1">Community Unit</h5>
-                        <p class="text-light small">A mental health self-assessment platform for common psychological conditions.
-                        </p>
-                        <div class="d-flex flex-wrap align-items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="20" alt="Bootstrap" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" alt="JavaScript" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="20" alt="PHP" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="20" alt="SQL" />
-                            <a href="https://conj.ksau-hs.edu.sa/standalone/basic-contents/mental-health-scales/index.php" title="Live Website" target="_blank" class="ms-auto text-white">
-                                <i class="fas fa-external-link-alt fa-lg"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $link = "./projects/mental-health-scales.php";
+                $image = "./images/mental-health-scales/hero.png";
+                $title = "Mental dass Scales";
+                $description =     "A mental health self-assessment platform for common psychological conditions.";
+                $techIcons = [
+                    "html5/html5-original.svg",
+                    "css3/css3-original.svg",
+                    "javascript/javascript-original.svg",
+                    "bootstrap/bootstrap-original.svg",
+                    "php/php-original.svg",
+                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
+                ];
+                renderProjectCard($link, $image, $title, $description, $techIcons)
+                ?>
             </div>
         </div>
+
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-4">
                 <a href="./projects.html">

@@ -365,8 +365,15 @@ strong {
 
 .surface-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+.surface-card .link-icon {
+    transition: transform 0.3s ease;
+}
+.surface-card:hover .link-icon {
+    transform: scale(1.2);
+}
+
 
 
 .card-title {
