@@ -136,7 +136,24 @@
         .breadcrumb {
             padding-left: 1rem;
         }
+        .section-title {
+font-size: 2rem;
+        }
+        .lead{
+        font-size: 1rem!important;
+        }
+        #hero{
+            height: 100vh;
+        }
+
+        .font-1rem{
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+
     }
+
     .skill-card {
         background-color: #2f3239; /* subtle contrast from #2b2e34 */
         border-radius: 16px;
@@ -144,19 +161,26 @@
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         color: var(--text);
         font-size: 1.05rem;
+        padding: 1rem;
+        margin: 0;
     }
 
     .skill-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-
+    .sub-title{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    .body-text p {
+        font-size: 1rem;
+    }
 
 </style>
 <body>
 
 
-<!-- Navigation -->
 <!-- Breadcrumb -->
 <section class="py-2" style="background-color: var(--surface)">
     <div class="container">
@@ -208,8 +232,8 @@
         <div class="col-lg-10">
 
             <!-- About -->
-            <div class="row justify-content-center">
-                <div class="skill-card" style="max-height: fit-content">
+            <div class="row justify-content-center p-2">
+                <div class="skill-card height-fit" style="max-height: fit-content">
                     <h3 class="mb-2 d-flex justify-content-center" style="font-weight: bold;">
                         <span class="sub-title">
                             About the Project
@@ -233,7 +257,7 @@
 
 
             <!-- Goals -->
-            <div class="row justify-content-center mt-4 pt-5">
+            <div class="justify-content-center mt-4 pt-5">
                     <h3 class="mb-2 d-flex justify-content-center" style="font-weight: bold;">
                         <span class="sub-title">
                             Goals
@@ -241,20 +265,20 @@
                     </h3>
 
                     <div class="row">
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-3">
                             <div class="skill-card text-center">
                                 <i class="fa-solid fa-heartbeat mb-3" style="font-size: 28px; color: var(--secondary);"></i>
                                 <p><strong>Promote mental health awareness</strong> through digital, self-assessment tools during Global Mental Health Day.</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-3">
                             <div class="skill-card text-center">
                                 <i class="fa-solid fa-user-shield mb-3" style="font-size: 28px; color: var(--secondary);"></i>
                                 <p><strong>Empower users</strong> with personal insights and immediate access to mental health resources.</p>
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-3">
                             <div class="skill-card text-center">
                                 <i class="fa-solid fa-universal-access mb-3" style="font-size: 28px; color: var(--secondary);"></i>
                                 <p><strong>Design for inclusivity and clarity</strong>, with a mobile-first, responsive approach.</p>
@@ -313,7 +337,7 @@
             </div>
 
             <!-- Key Features -->
-            <div class="row justify-content-center mt-4 pt-5">
+            <div class="row justify-content-center mt-4 pt-5 p-2">
                 <div class="skill-card" style="max-height: fit-content">
                     <h3 class="mb-2 d-flex justify-content-center" style="font-weight: bold;">
                         <span class="sub-title">
@@ -321,7 +345,7 @@
                         </span>
                     </h3>
 
-                    <ul class="list-unstyled text-light ul-text">
+                    <ul class="list-unstyled text-light ul-text font-1rem">
                         <li>
 
                             <strong>
@@ -412,20 +436,19 @@
 
 
 
-            <div class="row justify-content-center mt-4 pt-5">
+            <div class="row justify-content-center mt-4 pt-5 p-2">
                 <div class="skill-card" style="max-height: fit-content">
                     <h3 class="mb-2 d-flex justify-content-center" style="font-weight: bold;">
                         <span class="sub-title">
                             Test Source References
                         </span>
                     </h3>
-                    <ul>
+                    <ul class="font-1rem p-0" style="list-style: none">
                         <li><strong>Anxiety / Depression / Panic Disorder:</strong><br>
                             AlHadi AN, AlAteeq DA, Al-Sharif E, et al. <em>An Arabic translation, reliability, and validation of Patient Health Questionnaire in a Saudi sample.</em> Ann Gen Psychiatry. 2017;16(1):32.Available from:
-                            <a href="https://doi.org/10.1186/s12991-017-0155-1" target="_blank">https://doi.org/10.1186/s12991-017-0155-1</a>
+                            <a href="https://doi.org/10.1186/s12991-017-0155-1" target="_blank">doi.org</a>
                             <br>
                             <br>
-
                         </li>
                         <li>
 
@@ -433,7 +456,7 @@
                             Nasser, M. (1994). <em>The EAT-26: Psychometric properties and clinical norms in an Arabic-speaking population.</em> Soc Psychiatry Psychiatr Epidemiol, 29(2), 88–94. Available from:
                             <a href="https://doi.org/10.1007/BF00802049" target="_blank">https://doi.org/10.1007/BF00802049</a><br>
                             Rania, M. H., & El-Badri, S. (2020). <em>Reliability and validity of the Arabic version of the EAT-26 in a sample of Lebanese adolescents.</em> BMC Psychiatry, 20, 358. Available from:
-                            <a href="https://doi.org/10.1186/s12888-020-02854-2" target="_blank">https://doi.org/10.1186/s12888-020-02854-2</a>
+                            <a href="https://doi.org/10.1186/s12888-020-02854-2" target="_blank">doi.org</a>
                             <br>
                             <br>
 
@@ -441,7 +464,7 @@
                         <li>
                             <strong>ADHD Tool:</strong><br>
                             Karam, E. G., et al. (2010). <em>Validation of the Arabic version of the Adult ADHD Self-Report Scale (ASRS) in a Lebanese sample.</em> J Atten Disord, 14(6), 522–532. Available from:
-                            <a href="https://doi.org/10.1177/1087054710364222" target="_blank">https://doi.org/10.1177/1087054710364222</a>
+                            <a href="https://doi.org/10.1177/1087054710364222" target="_blank">doi.org</a>
                         </li>
                     </ul>
 

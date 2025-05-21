@@ -704,8 +704,7 @@ section {
             height: 80px;
         }
 
-        .credentials-card,
-        .skill-card {
+        .credentials-card{
             padding: 1rem;
             margin: 1rem;
         }
