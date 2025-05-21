@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </head>
 <?php
 
 $certificateFiles = [
-
 
     "2025-appreciation-alumni-day.png",
     "2025-appreciation-nursing-conference.png",
@@ -81,18 +81,19 @@ $certificateFiles = [
 <section class="full-screen-section" id="about">
     <div class="container p-5 text-start">
 
-        <p class="intro-text">Hi there,</p>
-        <h1 class="name-text">I am <span>Nojood </span></h1>
-        <h3 class="about-me-text">I craft experiences for the web and beyond.</h3>
-        <p class="description-text">
+        <p class="intro-hello">Hi there,</p>
+        <h1 class="intro-name">I am <span>Nojood </span></h1>
+        <h3 class="intro-about-me">I craft experiences for the web and beyond.</h3>
+        <p class="intro-description">
             I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
-        <a href="#" class="btn btn-gradient mt-4" style="">View Projects </a>
+        <a href="#" class="btn btn-gradient-filled mt-4" style="">View Projects </a>
         <a href="#" class="btn btn-gradient-outline mt-4" style="">Download Resume</a>
         <!-- Gradient Icon at Bottom Center -->
-        <a href="#highlights" class="btn btn-icon-gradient scroll-icon">
-            <i class="fa-solid fa-chevron-down"></i>
+        <a href="#highlights" class="btn  scroll-btn">
+            <i class="fa-solid fa-chevron-down icon-gradient"></i>
         </a>
+
     </div>
 
 </section>
@@ -105,7 +106,7 @@ $certificateFiles = [
         </div>
 
         <!-- Item 3 -->
-        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color:  var(--surface);">
+        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/ksau-logo.svg" alt="KSAU Logo" style="height: 50px;">
                 <div>
@@ -118,7 +119,7 @@ $certificateFiles = [
 
 
         <!-- Item 2 -->
-        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color:  var(--surface);">
+        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/sce-logo.svg" alt="SCE Logo" style="height: 50px;">
                 <div>
@@ -129,7 +130,7 @@ $certificateFiles = [
             <span class="text-light small" style="white-space: nowrap;">2023</span>
         </div>
         <!-- Item 1 -->
-        <div class="mb-4 py-4 px-4 rounded-4 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 shadow-sm" style="background-color: var(--surface);">
+        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/uj-logo.svg" alt="UJ Logo" style="height: 50px;">
                 <div>
@@ -155,7 +156,7 @@ $certificateFiles = [
 
             <!-- Card 1 -->
             <div class="col">
-                <div class="skill-card m-0">
+                <div class="surface-card m-0">
                     <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-braces card-icon"></i>
                         <div>
@@ -168,7 +169,7 @@ $certificateFiles = [
 
             <!-- Card 2 -->
             <div class="col">
-                <div class="skill-card m-0">
+                <div class="surface-card m-0">
                     <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-people card-icon"></i>
                         <div>
@@ -181,7 +182,7 @@ $certificateFiles = [
 
             <!-- Card 3 -->
             <div class="col">
-                <div class="skill-card m-0">
+                <div class="surface-card m-0">
                     <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-file-earmark-text card-icon"></i>
                         <div>
@@ -194,7 +195,7 @@ $certificateFiles = [
 
             <!-- Card 4 -->
             <div class="col">
-                <div class="skill-card m-0">
+                <div class="surface-card m-0">
                     <div class="d-flex align-items-center gap-3">
                         <i class="bi bi-shield-check card-icon"></i>
                         <div>
@@ -204,7 +205,6 @@ $certificateFiles = [
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -326,7 +326,7 @@ $certificateFiles = [
             <!-- Project Card -->
             <div class="col-md-4">
                 <a href="./mental-health-scales.html" target="_blank" class="text-decoration-none text-white">
-                    <div class="skill-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between position-relative">
+                    <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between position-relative">
                         <img src="./images/mental-health-scales/hero.png" class="mb-3 p-2" alt="Project Screenshot">
                         <div class="text-white">
                             <h5 class="mb-1">Mental Health Scales</h5>
@@ -354,7 +354,7 @@ $certificateFiles = [
 
             <!-- Project Card -->
             <div class="col-md-4">
-                <div class="skill-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+                <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
                     <!--                    <img src="./images/m3.png" class="img-fluid rounded mb-3" alt="Project Screenshot" style="height: 180px; object-fit: fill;">-->
                     <img src="./images/p2.png" class=" mb-3 p-2" alt="Project Screenshot">
                     <div class="text-white">
@@ -377,7 +377,7 @@ $certificateFiles = [
 
             <!-- Project Card -->
             <div class="col-md-4">
-                <div class="skill-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+                <div class="surface-card p-3 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
                     <!--                    <img src="./images/m3.png" class="img-fluid rounded mb-3" alt="Project Screenshot" style="height: 180px; object-fit: fill;">-->
                     <img src="./images/p3.png" class=" mb-3 p-2" alt="Project Screenshot">
                     <div class="text-white">
@@ -410,9 +410,6 @@ $certificateFiles = [
 
 <!--certificates-->
 <!-- Fancybox CSS & JS (add to your <head> or before </body>) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
 <section class="py-5" id="certificates">
     <div class="container">
         <div style="display: flex; align-items: center; justify-content: center">
@@ -421,41 +418,29 @@ $certificateFiles = [
         <div class="swiper-container-wrapper position-relative">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                        <?php
-foreach ($certificateFiles as $certificate):
-                        ?>
-                    <div class="swiper-slide">
-
-    <a data-fancybox="certificates" href="./images/certificates/<?php echo $certificate ?>>" data-caption="Certificate">
-        <img src="./images/certificates/<?php echo $certificate ?>" class="img-fluid rounded" style="max-height:300px; object-fit:contain; ">
-    </a>
-                    </div>
-
-<?php
-endforeach;
-                        ?>
-                    </div>
-
-
+                    <?php foreach ($certificateFiles as $certificate): ?>
+                        <div class="swiper-slide">
+                            <a data-fancybox="certificates" href="./images/certificates/<?php echo $certificate; ?>" data-caption="Certificate">
+                                <img src="./images/certificates/<?php echo $certificate; ?>" class="img-fluid rounded" style="max-height:300px; object-fit:contain;">
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
+            </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next d-none d-md-block"></div>
             <div class="swiper-button-prev d-none d-md-block"></div>
         </div>
-
-<!--        <div class="row pt-5">-->
-<!--            <div class="col-12 d-flex justify-content-center mt-4">-->
-<!--                <a href="./projects.html">-->
-<!--                    <button class="btn btn-outline">View More</button>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="row pt-5">-->
+        <!--            <div class="col-12 d-flex justify-content-center mt-4">-->
+        <!--                <a href="./projects.html">-->
+        <!--                    <button class="btn btn-outline">View More</button>-->
+        <!--                </a>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
@@ -483,6 +468,7 @@ endforeach;
 
 
     </script>
+</section>
 
 
 <section id="contact" class="py-5" style="background-color: var(--background);">
