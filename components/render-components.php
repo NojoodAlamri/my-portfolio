@@ -25,8 +25,6 @@ function renderProjectCard($link, $image, $title, $description, $techIcons = [])
     <?php
 }
 
-
-
 function renderBreadcrumb($items)
 {
     ?>
@@ -70,15 +68,20 @@ function renderIntro($title, $description, $imagePath, $linkUrl = null, $linkLab
                 </div>
             </div>
 
-            <?php if ($linkUrl): ?>
-                <div class="row d-flex justify-content-center mb-4">
+            <div class="row d-flex justify-content-center mb-4">
+                <?php if ($linkUrl): ?>
                     <div class="col-sm-12 col-md-3 d-flex justify-content-center">
+
                         <a href="<?= $linkUrl ?>" class="btn btn-outline mt-2 px-4 w-100" target="_blank">
                             <i class="fa fa-solid fa-link"></i> <?= htmlspecialchars($linkLabel) ?>
                         </a>
                     </div>
-                </div>
-            <?php endif; ?>
+
+                <?php else: ?>
+                    <p class="mt-2 text-center" style="color: var(--text-secondary)">System is available for authorized users only</p>
+                <?php endif; ?>
+
+            </div>
         </div>
     </section>
     <?php
