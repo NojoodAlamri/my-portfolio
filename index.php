@@ -17,16 +17,18 @@
 <?php
 
 $certificateFiles = [
+    "2025 - organizer in nursing conference.png",
+    "2023 - python.png",
+    "2023 - laravel.png",
 
-    "2025-appreciation-alumni-day.png",
-    "2025-appreciation-nursing-conference.png",
-    "2025-bootstrap.png",
-    "2023-laravel.png",
-    "2023-python.png",
-    "2022-coop.png",
-    "2023-backend.png",
-    "2023-database.png",
-    "2023-frontend.png",
+    "2024 - organizer in alumni day.png",
+    "2023 - rest.png",
+    "2023 - javascript.png",
+
+
+
+    "2022 - coop training.png",
+
 
 
 ];
@@ -357,7 +359,7 @@ $certificateFiles = [
                     "javascript/javascript-original.svg",
                     "bootstrap/bootstrap-original.svg",
                     "php/php-original.svg",
-                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
+                    "mysql/mysql-original.svg"
                 ];
                 renderProjectCard($link, $image, $title, $description, $techIcons)
                 ?>
@@ -405,19 +407,23 @@ $certificateFiles = [
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <?php foreach ($certificateFiles as $certificate): ?>
-                        <div class="swiper-slide">
-                            <a data-fancybox="certificates" href="./images/certificates/<?php echo $certificate; ?>" data-caption="Certificate">
-                                <img src="./images/certificates/<?php echo $certificate; ?>" class="img-fluid rounded" style="max-height:300px; object-fit:contain;">
+                        <div class="swiper-slide d-flex justify-content-center align-items-center">
+                            <a data-fancybox="certificates"
+                               href="./images/certificates/<?php echo $certificate; ?>"
+                               data-caption="Certificate">
+                                <img src="./images/certificates/<?php echo $certificate; ?>"
+                                     class="img-fluid rounded uniform-img"
+                                     alt="Certificate">
                             </a>
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next d-none d-md-block"></div>
             <div class="swiper-button-prev d-none d-md-block"></div>
         </div>
+
         <!--        <div class="row pt-5">-->
         <!--            <div class="col-12 d-flex justify-content-center mt-4">-->
         <!--                <a href="./projects.html">-->
@@ -430,7 +436,7 @@ $certificateFiles = [
     <script>
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -488,13 +494,13 @@ $certificateFiles = [
             <div class="col-md-6">
                 <form>
                     <div class="mb-3">
-                        <input type="text" class="form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Name" required>
+                        <input type="text" name="name" class="custom-placeholder form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Name" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Email" required>
+                        <input type="email"   name="email" class="custom-placeholder form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Email" required>
                     </div>
                     <div class="mb-3">
-                        <textarea rows="5" class="form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Message" required></textarea>
+                        <textarea  name="msg" rows="5" class="custom-placeholder form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-outline mt-2 px-4">Submit</button>
                 </form>
