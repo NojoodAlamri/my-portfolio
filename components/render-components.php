@@ -25,6 +25,7 @@ function renderProjectCard($link, $image, $title, $description, $techIcons = [])
     <?php
 }
 
+
 function renderBreadcrumb($items)
 {
     ?>
@@ -51,6 +52,7 @@ function renderBreadcrumb($items)
     </section>
     <?php
 }
+
 
 function renderIntro($title, $description, $imagePath, $linkUrl = null, $linkLabel = "View Live Site")
 {
@@ -87,6 +89,7 @@ function renderIntro($title, $description, $imagePath, $linkUrl = null, $linkLab
     <?php
 }
 
+
 function renderAbout($title = "About the Project", $paragraphs = [])
 {
     ?>
@@ -112,6 +115,7 @@ function renderAbout($title = "About the Project", $paragraphs = [])
     </section>
     <?php
 }
+
 
 function renderGoals($goals, $columns = 4)
 {
@@ -190,6 +194,7 @@ function renderFeatures($features, $title = "Key Features")
     <?php
 }
 
+
 function renderScreenshots($screenshots, $folderPath)
 {
     ?>
@@ -201,12 +206,12 @@ function renderScreenshots($screenshots, $folderPath)
             <div class="swiper-container-wrapper position-relative">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <?php foreach ($screenshots as $screenshot): ?>
+                        <?php foreach ($screenshots as $shot): ?>
                             <div class="swiper-slide">
                                 <a data-fancybox="screenshots"
-                                   href="<?= $folderPath . '/' . $screenshot ?>"
-                                   data-caption="Screenshot">
-                                    <img src="<?= $folderPath . '/' . $screenshot ?>"
+                                   href="<?= $folderPath . '/' . $shot['file'] ?>"
+                                   data-caption="<?= $shot['caption'] ?? 'Screenshot' ?>">
+                                    <img src="<?= $folderPath . '/' . $shot['file'] ?>"
                                          class="img-fluid rounded"
                                          style="max-height:300px; object-fit:contain; border:1px solid #444;">
                                 </a>
@@ -217,6 +222,39 @@ function renderScreenshots($screenshots, $folderPath)
                 <div class="swiper-pagination mt-3"></div>
                 <div class="swiper-button-next d-none d-md-block"></div>
                 <div class="swiper-button-prev d-none d-md-block"></div>
+            </div>
+        </div>
+    </section>
+    <?php
+}
+
+
+function renderChallenges($challenges)
+{
+    ?>
+    <section class="my-5 py-3">
+        <div class="container">
+            <h3 class="mb-2 d-flex justify-content-center font-bold">
+                <span class="sub-title">Challenges</span>
+            </h3>
+            <div class="row g-4">
+                <?php foreach ($challenges as $challenge): ?>
+                    <div class="col-md-12">
+                        <div class="surface-card p-3 h-100 rounded-4 shadow-sm">
+                            <h5 class="fw-bold mb-2">
+                                <i class="fas fa-exclamation-triangle me-2 text-secondary"></i>
+                                <?= htmlspecialchars($challenge['title']) ?>
+                            </h5>
+                            <p class="mb-2 text-light small">
+                                <?= htmlspecialchars($challenge['problem']) ?>
+                            </p>
+                            <div class="border-top pt-2 small">
+                                <i class="fas fa-check-circle text-success me-1"></i>
+                                <strong>Solved:</strong> <?= htmlspecialchars($challenge['solution']) ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

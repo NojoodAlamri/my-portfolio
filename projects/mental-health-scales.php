@@ -49,15 +49,7 @@ $features = [
     "User-Centered Design: Interface built with simplicity, accessibility, and ease of navigation in mind."
 ];
 
-$screenshots = [
-    "s1.png",
-    "s1.png",
-    "s1.png",
-    "s1.png",
-    "s1.png",
 
-];
-$folderPath = "../images/mental-health-scales";
 
 ?>
 
@@ -71,7 +63,7 @@ $folderPath = "../images/mental-health-scales";
 <!--Intro-->
 <?php renderIntro(
     "Mental Health Scales",
-    "Developed for the College of Nursing – KSAU-HS (Global Mental Health Day Project)",
+    "A mental health self-assessment platform for common psychological conditions.",
     "../images/mental-health-scales/hero.png",
     "https://conj.ksau-hs.edu.sa/standalone/basic-contents/mental-health-scales/index.php"
 );  ?>
@@ -84,19 +76,36 @@ $aboutParagraphs = [
 ];
 renderAbout("About the Project", $aboutParagraphs);
 ?>
+
 <!-- Goals Section -->
 <?php renderGoals($goals) ?>
 
-
 <!-- Tech Stack Section -->
 <?php renderTechStack($techStack) ?>
-
 
 <!-- Features Section -->
 <?php renderFeatures($features); ?>
 
 
-<?php renderScreenshots($screenshots, $folderPath) ?>
+
+
+
+
+
+<?php
+$folderPath = "../images/mental-health-scales";
+$screenshots = [
+    ["file" => "s1.png", "caption" => "Main Landing Page"],
+    ["file" => "s2.png", "caption" => "Intro and Disclaimer"],
+    ["file" => "s3.png", "caption" => "Test Categories Overview"],
+    ["file" => "s4.png", "caption" => "Consent Notice Before Test"],
+    ["file" => "s5.png", "caption" => "Depression Assessment – Part 1"],
+    ["file" => "s6.png", "caption" => "Depression Assessment – Part 2"],
+    ["file" => "s7.png", "caption" => "Final Result and Recommendations"],
+];
+
+
+renderScreenshots($screenshots, $folderPath) ?>
 
 
 

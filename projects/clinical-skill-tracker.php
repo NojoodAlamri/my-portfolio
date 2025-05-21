@@ -15,9 +15,13 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
-
 <?php
 include "../components/render-components.php";
+
+?>
+<body>
+<!-- Breadcrumb -->
+<?php
 
 $breadcrumbItems = [
     ['label' => 'Home', 'url' => '../index.html'],
@@ -25,40 +29,12 @@ $breadcrumbItems = [
     ['label' => 'Clinical Skill Tracker'] // العنصر الأخير لا يحتاج url
 ];
 
-
-
-
-
-$features = [
-    "Responsive Design: Optimized for seamless use across all screen sizes and devices.",
-    "Instant, Personalized Results: Users receive real-time feedback without any data being saved.",
-    "Structured Backend: SQL Server used to store questions and scoring rules, simplifying updates and ensuring accuracy.",
-    "Built-in Support Links: Each result includes access to academic counseling, Ministry of Health resources, and hotline details.",
-    "User-Centered Design: Interface built with simplicity, accessibility, and ease of navigation in mind."
-];
-
-$screenshots = [
-    "student-1.png",
-    "student-2.png",
-    "student-3.png",
-
-
-];
-$folderPath = "../images/clinical-skill-tracker";
-
-?>
-
-
-<body>
-
-
-<!-- Breadcrumb -->
-<?php renderBreadcrumb($breadcrumbItems); ?>
+renderBreadcrumb($breadcrumbItems); ?>
 
 <!--Intro-->
 <?php renderIntro(
     "Clinical Skill Tracker",
-    "Developed for the College of Nursing – KSAU-HS",
+    "A digital tool that helps students track and confirm clinical skills easily and accurately.",
     "../images/clinical-skill-tracker/hero.png"
 );  ?>
 
@@ -95,6 +71,19 @@ renderGoals($goals)
 ?>
 
 
+<!-- Features Section -->
+<?php
+$features = [
+    "Lab and Clinical Skill Management: Each course has two skill types, lab and clinical, with 4 grades (E: Explained, D: Demo, P: Practice, C: Competence).",
+    "Grade Entry: Assessors record student progress by assigning grades for each skill type.",
+    "Student Confirmation: Students receive an email to confirm the grades entered by the assessor.",
+    "Printable Reports: Students can print their personal skill progress reports. Assessors can view and print complete reports or filter by student.",
+    "Smart Data Handling: Skill grades for each course are stored efficiently using JSON, drastically reducing record size.",
+    "Real-Time Tracking: Both students and assessors can view skill completion, grade levels, and confirmation status."
+];
+
+renderFeatures($features); ?>
+
 <!-- Tech Stack Section -->
 <?php
 $techStack = [
@@ -109,11 +98,39 @@ renderTechStack($techStack)
 ?>
 
 
-<!-- Features Section -->
-<?php renderFeatures($features); ?>
+<?php
+$challenges = [
+    [
+        "title" => "Complex Data Structure",
+        "problem" => "Each student has multiple courses, each course contains multiple skills, and each skill requires tracking 8 grades (4 lab + 4 clinical).",
+        "solution" => "Stored all grades in one JSON field, reducing 8 records into 1."
+    ],
+    [
+        "title" => "Lack of Process Clarity",
+        "problem" => "Initially, the team didn’t fully understand how the paper tracker was used.",
+        "solution" => "Field visit revealed the actual paper workflow and signature process."
+    ]
+];
+
+renderChallenges($challenges);
+
+?>
+
+<?php
+$screenshots = [
+    ["file" => "student-1.png", "caption" => "Student Dashboard – Guidelines"],
+    ["file" => "student-2.png", "caption" => "Grades by Course and Semester"],
+    ["file" => "student-3.png", "caption" => "Skill List with Confirmation Status"],
+    ["file" => "student-4.png", "caption" => "Printable Logbook Report (PDF)"],
+];
 
 
-<?php renderScreenshots($screenshots, $folderPath) ?>
+$folderPath = "../images/clinical-skill-tracker";
+
+renderScreenshots($screenshots, $folderPath);
+
+
+?>
 
 
 
