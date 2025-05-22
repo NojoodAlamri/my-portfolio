@@ -368,17 +368,15 @@ $certificateFiles = [
             <!-- Project Card -->
             <div class="col-md-4">
                 <?php
-                $link = "./projects/mental-health-scales.php";
-                $image = "./images/mental-health-scales/hero.png";
-                $title = "Mental dass Scales";
-                $description =     "A mental health self-assessment platform for common psychological conditions.";
+                $link = "./projects/first-diamond.php";
+                $image = "./images/first-diamond/hero.png";
+                $title = "First Diamond";
+                $description =     "A responsive Arabic website designed for Almasa Al-Oula to showcase transportation services, fleet, and client engagement.";
                 $techIcons = [
                     "html5/html5-original.svg",
                     "css3/css3-original.svg",
                     "javascript/javascript-original.svg",
                     "bootstrap/bootstrap-original.svg",
-                    "php/php-original.svg",
-                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
                 ];
                 renderProjectCard($link, $image, $title, $description, $techIcons)
                 ?>
