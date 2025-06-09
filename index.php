@@ -1,4 +1,26 @@
-<?php include "./components/render-components.php"?>
+<?php
+include "./components/render-components.php";
+include "./helpers/send_email.php";
+
+$statusMessage = null;
+$statusClass = null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $msg = htmlspecialchars(trim($_POST['msg']));
+
+    if (send_email($name, $email, $msg)) {
+        $statusMessage = '<i class="fa-solid fa-circle-check me-2" style="color: #198754;"></i> Message sent successfully!';
+        $statusClass = 'alert-success';
+    } else {
+        $statusMessage = '<i class="fa-solid fa-circle-xmark me-2" style="color: #dc3545;"></i> Failed to send message.';
+        $statusClass = 'alert-danger';
+    }
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +29,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eng. Nojood - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="./images/logo1.png">
+
 </head>
 <?php
 
@@ -20,13 +44,9 @@ $certificateFiles = [
     "2025 - organizer in nursing conference.png",
     "2023 - python.png",
     "2023 - laravel.png",
-
     "2024 - organizer in alumni day.png",
     "2023 - rest.png",
     "2023 - javascript.png",
-
-
-
     "2022 - coop training.png",
 
 
@@ -37,17 +57,30 @@ $certificateFiles = [
 
 <body>
 
-<!-- Navigation -->
+<?php if ($statusMessage): ?>
+    <div id="feedback-message"
+         class="alert <?= $statusClass ?> text-center position-fixed top-0 start-50 translate-middle-x shadow"
+         style="z-index: 9999; width: fit-content; margin-top: 80px; padding: 10px 30px; border-radius: 30px;">
+        <?= $statusMessage ?>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const alert = document.getElementById("feedback-message");
+            if (alert) alert.remove();
+        }, 5000);
+    </script>
+<?php endif; ?>
+
+
+<!-- Navigation ✅-->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
     <div class="container">
 <div>
     <button class="navbar-toggler custom-navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <i class="fas fa-bars custom-toggler-icon"></i>
     </button>
-
 </div>
-
-
         <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
             <nav class="custom-rounded-navbar">
                 <ul class="nav-list">
@@ -60,13 +93,8 @@ $certificateFiles = [
                 </ul>
             </nav>
         </div>
-
     </div>
 </nav>
-
-
-
-
 
 <!-- Sidebar Icons -->
 <!--<div class="sidebar-icons">-->
@@ -81,19 +109,20 @@ $certificateFiles = [
 <!--    <div class="email-line"></div>-->
 <!--</div>-->
 
-<!-- Main Section -->
+<!-- Main Section ✅-->
 <section class="full-screen-section" id="about">
     <div class="container p-5 text-start">
-
+        <img src="./images/logo1.png" style="width: 120px; padding-bottom: 1em" alt="">
         <p class="intro-hello">Hi there,</p>
         <h1 class="intro-name">I am <span>Nojood </span></h1>
         <h3 class="intro-about-me">I craft experiences for the web and beyond.</h3>
         <p class="intro-description">
             I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
-        <a href="#" class="btn btn-gradient-filled mt-4" style="">View Projects </a>
+        <a href="#projects" class="btn btn-gradient-filled mt-4 w-md-25 w-sm-100" style="">View Projects </a>
         <a href="#" class="btn btn-gradient-outline mt-4" style="">Download Resume</a>
-        <!-- Gradient Icon at Bottom Center -->
+
+<!--         Gradient Icon at Bottom Center -->
         <a href="#highlights" class="btn  scroll-btn">
             <i class="fa-solid fa-chevron-down icon-gradient"></i>
         </a>
@@ -108,33 +137,30 @@ $certificateFiles = [
         <div style="display: flex; align-items: center; justify-content: center">
             <h2 class="section-title">Highlights</h2>
         </div>
-
-        <!-- Item 3 -->
-        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+        <!-- Item 4 -->
+        <div class="mt-4 surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/ksau-logo.svg" alt="KSAU Logo" style="height: 50px;">
                 <div>
-                    <h5 class="text-white fw-bold mb-1 card-title-sm">Programmer</h5>
+                    <h5 class="text-white fw-bold mb-1 card-title-sm">Programmer Analyst</h5>
                     <p class="text-light small mb-0">King Saud bin Abdulaziz University</p>
                 </div>
             </div>
-            <span class="text-light small" style="white-space: nowrap;">2023 – Present</span>
+            <span class="text-light small" style="white-space: nowrap;">2024 – Present</span>
         </div>
-
-
-        <!-- Item 2 -->
-        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-            <div class="d-flex align-items-center gap-3">
-                <img src="./images/sce-logo.svg" alt="SCE Logo" style="height: 50px;">
-                <div>
-                    <h5 class="text-white fw-bold mb-1 card-title-sm">Accredited Software Engineer</h5>
-                    <p class="text-light small mb-0">Saudi Council of Engineers</p>
-                </div>
-            </div>
-            <span class="text-light small" style="white-space: nowrap;">2023</span>
-        </div>
-        <!-- Item 1 -->
-        <div class="surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+        <!-- Item 3 -->
+<!--        <div class="mt-4 surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">-->
+<!--            <div class="d-flex align-items-center gap-3">-->
+<!--                <img src="./images/sce-logo.svg" alt="SCE Logo" style="height: 50px;">-->
+<!--                <div>-->
+<!--                    <h5 class="text-white fw-bold mb-1 card-title-sm">Accredited Software Engineer</h5>-->
+<!--                    <p class="text-light small mb-0">Saudi Council of Engineers</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <span class="text-light small" style="white-space: nowrap;">2023</span>-->
+<!--        </div>-->
+<!--        Item 2 -->
+        <div class="mt-4 surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="d-flex align-items-center gap-3">
                 <img src="./images/uj-logo.svg" alt="UJ Logo" style="height: 50px;">
                 <div>
@@ -142,15 +168,25 @@ $certificateFiles = [
                     <p class="text-light small mb-0">University of Jeddah</p>
                 </div>
             </div>
-            <span class="text-light small" style="white-space: nowrap;">2018 – 2022</span>
+            <span class="text-light small" style="white-space: nowrap;">2023</span>
         </div>
-
+        <!-- Item 1 -->
+        <div class="mt-4 surface-card d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+            <div class="d-flex align-items-center gap-3">
+                <img src="./images/KFMC-logo.png" alt="KFMC Logo" style="height: 50px;">
+                <div>
+                    <h5 class="text-white fw-bold mb-1 card-title-sm">Web Application Development Intern (Co-op)</h5>
+                    <p class="text-light small mb-0">King Fahad Medical City</p>
+                </div>
+            </div>
+            <span class="text-light small" style="white-space: nowrap;">2022</span>
+        </div>
 
     </div>
 </section>
 
 
-<!-- Skills Section -->
+<!-- Skills Section ✅-->
 <section class="py-5" id="skills">
     <div class="container">
         <div style="display: flex; align-items: center; justify-content: center">
@@ -294,7 +330,6 @@ $certificateFiles = [
         </div>
     </div>
 </section>
-
 <script>
     const tabs = document.querySelectorAll('.filter-tab');
     const items = document.querySelectorAll('.tool-card');
@@ -327,8 +362,26 @@ $certificateFiles = [
         </div>
         <div class="row">
 
-            <!-- Project Card -->
-            <div class="col-md-4">
+
+            <!-- Almasa Al-Oula -->
+            <div class="col-md-4 pt-4">
+                <?php
+                $link = "./projects/almasa-aloula.php";
+                $image = "./images/almasa-aloula/hero.png";
+                $title = "Almasa Al-Oula";
+                $description =  "A responsive Arabic website designed for Almasa Al-Oula to showcase transportation services, fleet, and client engagement.";
+                $techIcons = [
+                    "html5/html5-original.svg",
+                    "css3/css3-original.svg",
+                    "javascript/javascript-original.svg",
+                    "bootstrap/bootstrap-original.svg",
+                ];
+                renderProjectCard($link, $image, $title, $description, $techIcons)
+                ?>
+            </div>
+
+            <!-- Mental Health Scales -->
+            <div class="col-md-4 pt-4">
                 <?php
                 $link = "./projects/mental-health-scales.php";
                 $image = "./images/mental-health-scales/hero.png";
@@ -346,46 +399,33 @@ $certificateFiles = [
                 ?>
             </div>
 
-            <!-- Project Card -->
-            <div class="col-md-4">
+            <!-- Community Service Unit-->
+            <div class="col-md-4 pt-4">
                 <?php
-                $link = "./projects/clinical-skill-tracker.php";
-                $image = "./images/clinical-skill-tracker/hero.png";
-                $title = "Clinical Skill Tracker";
-                $description = "A digital tool that helps students track and confirm clinical skills easily and accurately.";
+                $link = "./projects/community-service-unit.php";
+                $image = "./images/community-service-unit/hero.png";
+                $title = "Community Service Unit";
+                $description = "Community Service Unit Website Redesign ";
                 $techIcons = [
                     "html5/html5-original.svg",
                     "css3/css3-original.svg",
                     "javascript/javascript-original.svg",
                     "bootstrap/bootstrap-original.svg",
                     "php/php-original.svg",
-                    "mysql/mysql-original.svg"
+                    "microsoftsqlserver/microsoftsqlserver-plain.svg"
                 ];
                 renderProjectCard($link, $image, $title, $description, $techIcons)
                 ?>
             </div>
 
-            <!-- Project Card -->
-            <div class="col-md-4">
-                <?php
-                $link = "./projects/first-diamond.php";
-                $image = "./images/first-diamond/hero.png";
-                $title = "First Diamond";
-                $description =     "A responsive Arabic website designed for Almasa Al-Oula to showcase transportation services, fleet, and client engagement.";
-                $techIcons = [
-                    "html5/html5-original.svg",
-                    "css3/css3-original.svg",
-                    "javascript/javascript-original.svg",
-                    "bootstrap/bootstrap-original.svg",
-                ];
-                renderProjectCard($link, $image, $title, $description, $techIcons)
-                ?>
-            </div>
+
+
+
         </div>
 
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-4">
-                <a href="./projects.html">
+                <a href="./projects.php">
                     <button class="btn btn-outline">View More</button>
                 </a>
             </div>
@@ -394,8 +434,7 @@ $certificateFiles = [
 </section>
 
 
-<!--certificates-->
-<!-- Fancybox CSS & JS (add to your <head> or before </body>) -->
+<!--certificates ✅-->
 <section class="py-5" id="certificates">
     <div class="container">
         <div style="display: flex; align-items: center; justify-content: center">
@@ -408,7 +447,7 @@ $certificateFiles = [
                         <div class="swiper-slide d-flex justify-content-center align-items-center">
                             <a data-fancybox="certificates"
                                href="./images/certificates/<?php echo $certificate; ?>"
-                               data-caption="Certificate">
+                               >
                                 <img src="./images/certificates/<?php echo $certificate; ?>"
                                      class="img-fluid rounded uniform-img"
                                      alt="Certificate">
@@ -460,37 +499,38 @@ $certificateFiles = [
     </script>
 </section>
 
-
+<!--contact-->
 <section id="contact" class="py-5" style="background-color: var(--background);">
     <div class="container">
         <div class="row align-items-start g-5">
             <div style="display: flex; align-items: center; justify-content: center">
                 <h2 class="section-title">Contact Me</h2>
-
             </div>
 
             <!-- Contact Info -->
             <div class="col-md-6 text-start mt-md-4 mt-sm-0">
                 <div class="mt-md-4 mt-sm-0">
-                    <p class="mb-2 text-white"><i class="fas fa-envelope me-2" style="color: var(--accent);"></i> <strong>Mail</strong></p>
-                    <p class="text-light small">nojood-alamri@outlook.com</p>
-
-                    <p class="mb-2 text-white mt-4"><i class="fas fa-map-marker-alt me-2" style="color: var(--accent);"></i> <strong>Location</strong></p>
+                    <p class="mb-2 text-white"><i class="fas fa-envelope me-2" style="color: var(--text);"></i> <strong>Mail</strong></p>
+                        <a class="text-light small" style="text-decoration: none" href="mailto:nojood-alamri@outlook.com">
+                            nojood-alamri@outlook.com
+                        </a>
+                    <p class="mb-2 text-white mt-4"><i class="fas fa-map-marker-alt me-2" style="color: var(--text);"></i> <strong>Location</strong></p>
                     <p class="text-light small">Jeddah, Saudi Arabia</p>
                 </div>
 
                 <!-- Social Icons -->
                 <div class="mt-4 d-flex gap-3">
-                    <a href="https://github.com/NojoodAlamri" class="text-white"><i class="fab fa-github fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/eng-nojood-a-a5884b180/" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="https://x.com/nojoodCodes" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://github.com/NojoodAlamri" target="_blank" class="text-white"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/eng-nojood-a-a5884b180/" target="_blank" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://x.com/nojoodCodes" target="_blank" class="text-white" ><i class="fab fa-x-twitter fa-lg"></i>
+                    </a>
 
                 </div>
             </div>
 
             <!-- Contact Form -->
             <div class="col-md-6">
-                <form>
+                <form method="post">
                     <div class="mb-3">
                         <input type="text" name="name" class="custom-placeholder form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Name" required>
                     </div>
@@ -500,7 +540,7 @@ $certificateFiles = [
                     <div class="mb-3">
                         <textarea  name="msg" rows="5" class="custom-placeholder form-control border-0 custom-placeholder" style="background-color: var(--surface); color: var(--text)" placeholder="Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-outline mt-2 px-4">Submit</button>
+                    <button type="submit" class="btn btn-outline mt-2 px-4">Send</button>
                 </form>
             </div>
         </div>
@@ -557,8 +597,6 @@ $certificateFiles = [
         });
     });
 </script>
-
-
 
 </body>
 </html>

@@ -615,10 +615,17 @@ strong {
 
 /* -------------------------------- Media Query: Mobile Styles -------------------------------- */
 @media (max-width: 767.98px) {
+
+    .body-text p {
+        font-size: 1rem;
+    }
+
+
     .breadcrumb {
         padding-left: 1rem;
     }
-    .surface-card{
+
+    .surface-card {
         margin: 0;
         padding: 2rem 1rem;
     }
@@ -704,7 +711,6 @@ strong {
     }
 
 
-
     .scroll-icon {
         bottom: 30px;
     }
@@ -747,30 +753,35 @@ strong {
         font-size: 1rem;
         line-height: 1.5rem;
     }
-}
 
-/* -------------------------------- Breadcrumb -------------------------------- */
-.breadcrumb {
-    padding-top: 2rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-.breadcrumb-item a {
-    color: var(--secondary);
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-.breadcrumb-item a:hover {
-    color: var(--primary);
-}
-.breadcrumb-item.active {
-    color: #e6e7e9;
-}
+    .tool-label {
+        font-size: 0.6rem;
+    }
 
+    .tool-card img {
+        width: 30px;
+        height: 30px;
+    }
 
+    /* -------------------------------- Breadcrumb -------------------------------- */
+    .breadcrumb {
+        padding-top: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
 
+    .breadcrumb-item a {
+        color: var(--secondary);
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
 
-.custom-placeholder::placeholder {
-    color: #fff !important;
-    opacity: 1;
+    .breadcrumb-item a:hover {
+        color: var(--primary);
+    }
+
+    .breadcrumb-item.active {
+        color: #e6e7e9;
+    }
+
 }

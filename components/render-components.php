@@ -4,12 +4,12 @@ function renderProjectCard($link, $image, $title, $description, $techIcons = [])
 {
     $cdnBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/";
     ?>
-    <a href="<?= $link ?>" target="_blank" class="text-decoration-none text-white">
+    <a href="<?= $link ?>" class="text-decoration-none text-white">
         <div class="surface-card m-0 h-100 d-flex flex-column justify-content-between position-relative">
             <img src="<?= $image ?>" class="mb-3 p-2" alt="Project Screenshot">
             <div class="text-white">
                 <h5 class="mb-1"><?= htmlspecialchars($title) ?></h5>
-                <p class="text-light small"><?= htmlspecialchars($description) ?></p>
+                <p class="small"><?= htmlspecialchars($description) ?></p>
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     <?php foreach ($techIcons as $icon): ?>
                         <img src="<?= $cdnBase . $icon ?>" width="20" alt="Tech Icon">
@@ -80,7 +80,7 @@ function renderIntro($title, $description, $imagePath, $linkUrl = null, $linkLab
                     </div>
 
                 <?php else: ?>
-                    <p class="mt-2 text-center" style="color: var(--text-secondary)">System is available for authorized users only</p>
+                    <p class="mt-2 text-center" style="color: var(--text-secondary)">System is only available for users inside KSAU-HS </p>
                 <?php endif; ?>
 
             </div>
@@ -104,7 +104,7 @@ function renderAbout($title = "About the Project", $paragraphs = [])
 
                         <div class="body-text">
                             <?php foreach ($paragraphs as $p): ?>
-                                <p><?= htmlspecialchars($p) ?></p>
+                                <p><?= ($p) ?></p>
                             <?php endforeach; ?>
                         </div>
 
@@ -178,11 +178,11 @@ function renderFeatures($features, $title = "Key Features")
             <h3 class="mb-2 d-flex justify-content-center font-bold">
                 <span class="sub-title"><?= $title ?></span>
             </h3>
-            <ul class="list-unstyled text-light ul-text font-1rem">
+            <ul class="list-unstyled ul-text font-1rem">
                 <?php foreach ($features as $feature): ?>
                     <li>
                         <i class="fa-solid fa-check font-secondary" style="font-size: 20px;"></i>
-                        <strong><?= $feature ?></strong>
+                        <?= $feature ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -245,7 +245,7 @@ function renderChallenges($challenges)
                                 <i class="fas fa-exclamation-triangle me-2 text-secondary"></i>
                                 <?= htmlspecialchars($challenge['title']) ?>
                             </h5>
-                            <p class="mb-2 text-light small">
+                            <p class="mb-2 small">
                                 <?= htmlspecialchars($challenge['problem']) ?>
                             </p>
                             <div class="border-top pt-2 small">

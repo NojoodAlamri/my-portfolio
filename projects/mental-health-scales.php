@@ -20,8 +20,8 @@
 include "../components/render-components.php";
 
 $breadcrumbItems = [
-    ['label' => 'Home', 'url' => '../index.html'],
-    ['label' => 'Projects', 'url' => '../projects.html'],
+    ['label' => 'Home', 'url' => '../index.php'],
+    ['label' => 'Projects', 'url' => '../projects.php'],
     ['label' => 'Mental Health Scales'] // العنصر الأخير لا يحتاج url
 ];
 
