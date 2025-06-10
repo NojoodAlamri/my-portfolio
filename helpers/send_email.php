@@ -15,6 +15,7 @@ function send_email($name, $email, $msg): bool
     try {
         // Server Settings
         $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
         $mail->Host       = 'nojoodalamri.pub.sa';
         $mail->SMTPAuth   = true;
         $mail->Username   = $config['email_user'];
