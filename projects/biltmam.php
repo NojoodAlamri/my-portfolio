@@ -27,6 +27,20 @@ $aboutParagraphs = [
     "
     We designed Biltmam to solve real pain points faced by event organizers, like the hassle of searching, booking, and coordinating with multiple parties. The app allows planners to discover services, book vendors, communicate via in-app chat, track order status, and even reach out to sponsors for support.
 ",
+
+    "
+<br>
+    <strong>My contributions included:</strong>
+<ul>
+  <li>Leading frontend development.</li>
+  <li>Implementing role-based authentication and dynamic navigation.</li>
+  <li>Designing vendor and planner workflows (signup, service creation, booking, feedback).</li>
+  <li>Integrating Firebase for authentication, database, and real-time messaging.</li>
+  <li>Writing and documenting sprint tasks and project implementation details.</li>
+</ul>
+
+    "
+
 ];
 
 renderAbout("About the Project", $aboutParagraphs);
@@ -57,26 +71,25 @@ renderGoals($goals)
 <!-- Features Section -->
 <?php
 $features = [
-    "Lab and Clinical Skill Management: Each course has two skill types, lab and clinical, with 4 grades (E: Explained, D: Demo, P: Practice, C: Competence).",
-    "Grade Entry: Assessors record student progress by assigning grades for each skill type.",
-    "Student Confirmation: Students receive an email to confirm the grades entered by the assessor.",
-    "Printable Reports: Students can print their personal skill progress reports. Assessors can view and print complete reports or filter by student.",
-    "Smart Data Handling: Skill grades for each course are stored efficiently using JSON, drastically reducing record size.",
-    "Real-Time Tracking: Both students and assessors can view skill completion, grade levels, and confirmation status."
+    "Role-Based Access Control: Separate experiences for Planners, Vendors, Sponsors, and Admins — each with tailored functionality and access.",
+    "Service & Package Booking: Planners can easily search, book, and track services or packages offered by verified vendors.",
+    "Real-Time Chat: In-app messaging between planners, vendors, and sponsors to streamline communication and coordination.",
+    "Admin Verification System: Admins review and approve vendor profiles, services, and packages to ensure quality and trust.",
+    "Favorites & Feedback: Planners can save favorite services for later and leave comments after bookings to help others evaluate options.",
 ];
+
 
 renderFeatures($features); ?>
 
 <!-- Tech Stack Section -->
 <?php
 $techStack = [
-    ["name" => "HTML", "img" => "html5", "type" => "frontend"],
-    ["name" => "CSS", "img" => "css3", "type" => "frontend"],
-    ["name" => "JavaScript", "img" => "javascript", "type" => "frontend"],
-    ["name" => "Bootstrap", "img" => "bootstrap", "type" => "frontend"],
-    ["name" => "PHP", "img" => "php", "type" => "backend"],
-    ["name" => "MySQL", "img" => "mysql", "type" => "database"],
+    ["name" => "flutter", "img" => "flutter", "type" => "mobile"],
+    ["name" => "firebase", "img" => "firebase", "type" => "database"],
+    ["name" => "figma", "img" => "figma", "type" => "frontend"],
+    ["name" => "github", "img" => "github", "type" => "tools"],
 ];
+
 renderTechStack($techStack)
 ?>
 
@@ -84,15 +97,20 @@ renderTechStack($techStack)
 <?php
 $challenges = [
     [
-        "title" => "Complex Data Structure",
-        "problem" => "Each student has multiple courses, each course contains multiple skills, and each skill requires tracking 8 grades (4 lab + 4 clinical).",
-        "solution" => "Stored all grades in one JSON field, reducing 8 records into 1."
+        "title" => "Multi-role Complexity (Admin, Vendor, Planner, Sponsor)",
+        "problem" => "Designing role-specific logic, permissions, and interfaces without overlapping or breaking functionality.",
+        "solution" => "Used role-based authentication with Firebase and directed each role to its custom home page and flow. Clear UI separation and functional boundaries for each user type."
     ],
     [
-        "title" => "Lack of Process Clarity",
-        "problem" => "Initially, the team didn’t fully understand how the paper tracker was used.",
-        "solution" => "Field visit revealed the actual paper workflow and signature process."
-    ]
+        "title" => "Authentication & Data Integrity",
+        "problem" => "Ensuring only verified vendors/sponsors can list services or interact with planners.",
+        "solution" => "Admin role built specifically for verifying users and content before activation. Authentication steps enforced at both sign-up and service submission level."
+    ],
+    [
+        "title" => "Time Management Across Sprints",
+        "problem" => "A lot of work for a short timeline.",
+        "solution" => "Clear sprint planning with backlogs and burndown charts. Tasks divided by priority and role, and tracked sprint-by-sprint with actual delivery metrics."
+    ],
 ];
 
 renderChallenges($challenges);

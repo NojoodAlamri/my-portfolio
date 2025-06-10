@@ -155,7 +155,15 @@ function renderTechStack($techStack)
             <div class="d-flex flex-wrap justify-content-center gap-3">
                 <?php foreach ($techStack as $tech): ?>
                     <div class="tool-card tool-item <?= $tech['type'] ?>">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<?= $tech['img'] ?>/<?= $tech['img'] ?>-original.svg"
+                        <?php
+                        if ($tech['img'] == "firebase") {
+                            $img = "firebase-plain";
+                        }
+                        else {
+                            $img = $tech['img']."-original";
+                        }
+                        ?>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<?= $tech['img'] ?>/<?= $img ?>.svg"
                              alt="<?= $tech['name'] ?>" />
                         <p class="tool-label"><?= $tech['name'] ?></p>
                     </div>
