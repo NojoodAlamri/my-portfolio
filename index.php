@@ -119,8 +119,8 @@ $certificateFiles = [
         <p class="intro-description">
             I'm a software engineer crafting smooth and meaningful experiences for the web and mobile, driven by curiosity and a passion for learning.
         </p>
+        <a href="./pdf/Resume-NojoodAlamri-SoftwareEngineer.pdf" target="_blank" class="btn btn-gradient-outline mt-4" style="">Download Resume</a>
         <a href="#projects" class="btn btn-gradient-filled mt-4 w-md-25 w-sm-100" style="">View Projects </a>
-        <a href="#" class="btn btn-gradient-outline mt-4" style="">Download Resume</a>
 
 <!--         Gradient Icon at Bottom Center -->
         <a href="#highlights" class="btn  scroll-btn">
