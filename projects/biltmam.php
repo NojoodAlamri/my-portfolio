@@ -14,7 +14,7 @@ renderBreadcrumb($breadcrumbItems); ?>
     "Biltmam",
     "Event planning app that connects planners with vendors and sponsors to simplify booking and coordination.",
     "../images/biltmam/hero.png",
-    "dddddddd",
+    "../pdf/SeniorProjectReport.pdf",
     "View Project Report (pdf)"
 );  ?>
 
